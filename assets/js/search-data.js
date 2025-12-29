@@ -398,10 +398,7 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-first-day-as-instruments-intern-with-space-telescope-science-institute",
-          title: 'First day as Instruments Intern with Space Telescope Science Institute! 🚀🪐',
-          description: "",
-          section: "News",},{id: "news-started-bachelor-s-degree-at-the-george-washington-university-in-washington-dc-sparkles-smile",
+            },},{id: "news-started-bachelor-s-degree-at-the-george-washington-university-in-washington-dc-sparkles-smile",
           title: 'Started bachelor’s degree at The George Washington University in Washington, DC! :sparkles: :smile:...',
           description: "",
           section: "News",},{id: "news-first-day-at-pennsylvania-department-of-transportation-as-a-summer-intern",
@@ -409,6 +406,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-began-study-abroad-semester-at-the-university-of-new-south-wales-in-sydney-australia",
           title: 'Began study abroad semester at the University of New South Wales in Sydney,...',
+          description: "",
+          section: "News",},{id: "news-first-day-as-instruments-intern-with-space-telescope-science-institute-telescope",
+          title: 'First day as Instruments Intern with Space Telescope Science Institute! :telescope:🪐',
           description: "",
           section: "News",},{id: "news-presented-poster-on-cosmic-origins-spectrograph-cross-correlation-wavelength-calibration-at-aas-243-in-new-orleans-la",
           title: 'Presented poster on Cosmic Origins Spectrograph cross-correlation wavelength calibration at AAS 243 in...',
