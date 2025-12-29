@@ -191,6 +191,9 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - _pages/profiles.md
+  - _pages/repositories.md
+  - _pages/publications.md
 keep_files:
   - CNAME
   - .nojekyll
