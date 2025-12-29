@@ -398,7 +398,10 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-started-bachelor-s-degree-at-the-george-washington-university-in-washington-dc-sparkles-smile",
+            },},{id: "news-first-day-as-instruments-intern-with-space-telescope-science-institute",
+          title: 'First day as Instruments Intern with Space Telescope Science Institute! 🚀🪐',
+          description: "",
+          section: "News",},{id: "news-started-bachelor-s-degree-at-the-george-washington-university-in-washington-dc-sparkles-smile",
           title: 'Started bachelor’s degree at The George Washington University in Washington, DC! :sparkles: :smile:...',
           description: "",
           section: "News",},{id: "news-first-day-at-pennsylvania-department-of-transportation-as-a-summer-intern",
