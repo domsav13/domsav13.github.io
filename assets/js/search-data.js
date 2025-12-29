@@ -413,7 +413,7 @@ ninja.data = [{
           section: "News",},{id: "news-presented-poster-on-cosmic-origins-spectrograph-cross-correlation-wavelength-calibration-at-aas-243-in-new-orleans-la",
           title: 'Presented poster on Cosmic Origins Spectrograph cross-correlation wavelength calibration at AAS 243 in...',
           description: "",
-          section: "News",},{id: "news-began-research-and-training-in-ai-ml-as-an-undergraduate-research-assistant-with-the-intelligent-aerospace-systems-lab-at-gwu-️-cloud",
+          section: "News",},{id: "news-began-research-and-training-in-ai-ml-as-an-undergraduate-research-assistant-with-the-intelligent-aerospace-systems-lab-at-gw-️-cloud",
           title: 'Began research and training in AI/ML as an undergraduate research assistant with the...',
           description: "",
           section: "News",},{id: "news-graduated-summa-cum-laude-from-gw-with-a-major-in-mechanical-engineering-concentration-in-aerospace-engineering-and-minor-in-mathematics-tada",
