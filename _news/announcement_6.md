@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Began research and training in AI/ML as an undergraduate research assistant with the Intelligent Aerospace Systems Lab at GWU ✈️:cloud:
+Began research and training in AI/ML as an undergraduate research assistant with the Intelligent Aerospace Systems Lab at GW ✈️:cloud:
