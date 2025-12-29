@@ -398,8 +398,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-started-bachelor-s-degree-at-the-george-washington-university-in-washington-dc-sparkles-smile",
+          title: 'Started bachelor’s degree at The George Washington University in Washington, DC! :sparkles: :smile:...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
