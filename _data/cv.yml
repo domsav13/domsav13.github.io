@@ -1,12 +1,16 @@
 - title: General Information
   type: map
   contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+    - name: Name
+      value: Dominic Savarino
+    - name: Email
+      value: dsavarino@gwu.edu
+    - name: Phone
+      value: (717) 525-3206
+    - name: LinkedIn
+      value: https://linkedin.com/in/dominic-savarino/
+    - name: Website
+      value: https://domsav13.github.io
 
 - title: Education
   type: time_table
