@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started bachelor's degree at The George Washington University in Washington, DC! :sparkles: :smile:
+Started my bachelor's degree at The George Washington University in Washington, DC! :sparkles: :smile:
