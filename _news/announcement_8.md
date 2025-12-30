@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started accelerated, non-thesis master's degree at GW in Mechanical Engineering (Robotics and Controls)! ✨😄
+Started my master's degree at GW in Mechanical Engineering (Robotics and Controls)! ✨😄
