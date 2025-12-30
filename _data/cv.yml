@@ -20,19 +20,18 @@
       year: 2025-2026
       description:
         - Mechanical Engineering
-        - Focus area - Robotics, Mechatronics, and Controls
+        - "Focus area: robotics, mechatronics, and controls"
     - title: Bachelor of Science (B.S.)
       institution: The George Washington University, Washington, District of Columbia, United States of America
       year: 2021-2025
       description:
-        - Major - Mechanical Engineering
-        - Concentration - Aerospace Engineering
-        - Minor - Mathematics
+        - "Major: Mechanical and Aerospace Engineering"
+        - "Minor: Mathematics"
     - title: Student Exchange
       institution: The University of New South Wales, Sydney, New South Wales, Australia
       year: 2023
       description:
-        - Study abroad semester (January - May 2023)
+        - Study abroad semester (Spring 2023)
 
 - title: Experience
   type: time_table
