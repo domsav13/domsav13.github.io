@@ -15,17 +15,24 @@
 - title: Education
   type: time_table
   contents:
-    - title: Master of Science
+    - title: Master of Science (M.S.)
       institution: The George Washington University, Washington, District of Columbia, United States of America
-      year: 2026
+      year: 2025-2026
       description:
-        - Focus area: Robotics, mechatronics, and controls
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Mechanical Engineering
+        - Focus area - Robotics, Mechatronics, and Controls
+    - title: Bachelor of Science (B.S.)
+      institution: The George Washington University, Washington, District of Columbia, United States of America
+      year: 2021-2025
       description:
-        - Description 1.
-        - Description 2.
+        - Major - Mechanical Engineering
+        - Concentration - Aerospace Engineering
+        - Minor - Mathematics
+    - title: Student Exchange
+      institution: The University of New South Wales, Sydney, New South Wales, Australia
+      year: 2023
+      description:
+        - Study abroad semester (January - May 2023)
 
 - title: Experience
   type: time_table
