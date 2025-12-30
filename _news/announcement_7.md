@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated summa cum laude (B.S.) from GW with a major in Mechanical Engineering, concentration in Aerospace Engineering, and minor in Mathematics! 🎆:tada:
+Graduated summa cum laude from GW, earning the Bachelor of Science! 🎆:tada:
