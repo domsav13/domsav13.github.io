@@ -8,9 +8,9 @@
     - name: Phone
       value: (717) 525-3206
     - name: LinkedIn
-      value: [LinkedIn](https://linkedin.com/in/dominic-savarino)
+      value: '<a href="https://linkedin.com/in/dominic-savarino" target="_blank">LinkedIn</a>'
     - name: Website
-      value: [https://domsav13.github.io](https://domsav13.github.io)
+      value: '<a href="https://domsav13.github.io" target="_blank">domsav13.github.io</a>'
 
 - title: Education
   type: time_table
