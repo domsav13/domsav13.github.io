@@ -7,7 +7,7 @@ nav: true
 nav_order: 6
 ---
 
-#### **(Fall 2025/Spring 2026) MAE 1004: Engineering Drawings and Computer Graphics - Lab Section**.
+##### **(Fall 2025/Spring 2026) MAE 1004: Engineering Drawings and Computer Graphics - Lab Section**.
 
 My responsibilities include teaching weekly lessons in computer-aided design and drafting (AutoCAD and SOLIDWORKS), developing in-class demonstrations based on real-world examples, grading student submissions with feedback, and designing exam questions that target common practices in modern design.
 
