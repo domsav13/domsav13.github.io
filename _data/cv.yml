@@ -30,8 +30,6 @@
     - title: Student Exchange
       institution: The University of New South Wales, Sydney, New South Wales, Australia
       year: 2023
-      description:
-        - Study abroad semester (Spring 2023)
 
 - title: Experience
   type: time_table
@@ -40,45 +38,35 @@
       institution: GW Department of Mechanical and Aerospace Engineering
       year: 2025-2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
+        - Teaches the lab section for MAE 1004.
+      
     - title: Community Ambassador
       institution: GWU Office for Study Abroad
       year: 2023-2025
       description:
-        - Description 1.
-        - Description 2.
+        - Led outreach, programming, and peer advising for prospective study abroad students.
 
     - title: Undergraduate Research Assistant
       institution: GWU Intelligent Aerospace Systems Lab
       year: 2024-2025
+      description:
+        - Simulated flight scenarios and explored reinforcement learning as a control strategy for mid-air deconfliction.
 
     - title: Instruments Intern
       institution: Space Telescope Science Institute
       year: 2023-2024
       description:
+        - Designed a new wavelength calibration method for the Cosmic Origins Spectrograph onboard the Hubble Space Telescope.
 
     - title: Student Instructor
       institution: GWU Honey W. Nashman Center for Civic Engagement and Public Service
       year: 2022
+      description:
+        - "Organized and led classroom activities for the AnBryce Foundation's Saturday Institute."
 
     - title: Engineering, Scientific, and Technical Intern
       institution: Pennsylvania Department of Transportation
       year: 2022
+      description:
+        - "Conducted surveys in street and infrastructure quality for Pennsylvania's 8th Engineering District."
       
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
