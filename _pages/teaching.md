@@ -2,11 +2,13 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: 
 nav: true
 nav_order: 6
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+### (Fall 2025 and Spring 2026) MAE 1004: Engineering Drawings and Computer Graphics - Lab Section.
 
-Organize your courses by years, topics, or universities, however you like!
+My responsibilities include teaching weekly lessons in computer-aided design and drafting (AutoCAD and SOLIDWORKS), developing in-class demonstrations based on real-world examples, grading student submissions with feedback, and designing exam questions that target common practices in modern design.
+
+In my own words, the goals of the lab section are 1) to gain basic literacy in industry-recognized design software, 2) use coordinate systems and dimensions to construct basic/intermediate 2D and 3D models, 3) manipulate models for configurations and assembly, 4) prepare technical and multiview drawings for parts and assemblies, and 5) gain basic understanding of standardized terminology (symbols, lettering, etc.), advanced modeling, and simulation techniques.
