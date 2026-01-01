@@ -10,7 +10,7 @@ related_posts: false
 
 Consider a cross-section of an airplane wing, approximated as a cantilever beam. The wing is made of Aluminum 6061 (elastic modulus $$ E = 70 $$ GPa, Poisson's ratio $$ \nu = 0.3 $$, and yield stress $$ \sigma_y = 250 $$ MPa) and experiences a downward force $$ P $$ applied at the shear center due to a turbojet engine.
 
-#### Shear flows and shear center
+### Shear flows and shear center
 
 First, the shear center of the cross-section will be calculated analytically. The shear flow $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ is used where $$ t $$ is the section thickness, $$ S_y $$ is a placeholder force located on the shear center, $$ I_{xx} $$ is the second moment of area of the section about the x-axis, and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ and $$ t = 2 $$, $$ I_{xx} $$ is calculated as:
 
@@ -74,4 +74,4 @@ $$
 x_s = \frac{87.37}{18.24(25)^3(2)} (2)(25)^4 = 119.75 mm
 $$
 
-#### Lowest allowable force, analytically
+### Lowest allowable force, analytically
