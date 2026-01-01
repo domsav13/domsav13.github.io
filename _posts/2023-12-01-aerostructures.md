@@ -17,15 +17,13 @@ $$
 I_{xx}
 &= \frac{(2r)^3 t}{12}
 + 2\left(\frac{8 r t^3}{12} + 8 r^3 t\right)
-+ 2 t r^3 \int_{0}^{\pi/2} \cos^2\theta \, d\theta \\[4pt]
-&= \frac{2}{3}r^3 t + \frac{4}{3} r t^3 + 16 r^3 t
-+ 2 t r^3 \int_{0}^{\pi/2} \cos^2\theta \, d\theta \\[4pt]
-&= \frac{2}{3}r^3 t + \frac{4}{3} r t^3 + 16 r^3 t
-+ 2 t r^3 \cdot \frac{\pi}{4} \\[4pt]
-&= r^3 t\!\left(\frac{2}{3}+16+\frac{\pi}{2}\right) + \frac{4}{3} r t^3 .
++ 2 t r^3 \int_{0}^{\pi/2} \cos^2\theta \, d\theta \\
+&= \frac{2}{3}r^3 t + 16 r^3 t
++ 2 r^3 t \int_{0}^{\pi/2} \cos^2\theta \, d\theta \\
+&= r^3 t\left(\frac{2}{3}+16+\frac{\pi}{2}\right)=18.24r^3t
 \end{aligned}
 $$
-
+with the thin-wall approximation ($$ t^i = 0 $$ for $$ i \ge 2 $$). Now the shaer flow is calculated for each major part of the section. In the wall 12, $$ y = s_1 $$:
 
 
 
