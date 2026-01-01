@@ -17,7 +17,7 @@ $$
 I_{xx}
 &= \frac{(2r)^3 t}{12}
 + 2\left(\frac{8 r t^3}{12} + 8 r^3 t\right)
-+ 2 t r^3 \int_{0}^{\pi/2} \cos^2\theta \, d\theta \\
++ 2 \int_{0}^{\pi/2} t r^2 \cos^2\theta \, r d\theta \\
 &= \frac{2}{3}r^3 t + 16 r^3 t
 + 2 r^3 t \int_{0}^{\pi/2} \cos^2\theta \, d\theta \\
 &= r^3 t\left(\frac{2}{3}+16+\frac{\pi}{2}\right)=18.24r^3t
