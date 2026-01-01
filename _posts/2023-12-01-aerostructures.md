@@ -12,9 +12,15 @@ Consider a cross-section of an airplane wing, approximated as a cantilever beam.
 
 First, the shear center of the cross-section will be calculated analytically. The shear flow $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ where $$ t $$ is the section thickness, $$ S_y $$ is a placeholder force located on the shear center, $$ I_{xx} $$ is the second moment of area of the section about the x-axis, and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ and $$ t = 2 $$, I_{xx} is calculated as:
 
-$$
-I_{xx} = \frac{(2r)^3t}{12} + 2(\frac{8rt^3}{12}+8r^3t) + 2 \int_0^\frac{\pi}{2} tr^2\cos^2 \theta rd \theta
-$$
+\[
+\begin{aligned}
+I_{xx}
+&= \frac{(2r)^3 t}{12}
++ 2\left( \frac{8 r t^3}{12} + 8 r^3 t \right)
++ 2 t r^3 \int_{0}^{\pi/2} \cos^2\theta \, d\theta
+\end{aligned}
+\]
+
 
 This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine. You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`. If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$.
 
