@@ -184,6 +184,17 @@ ninja.data = [{
             window.location.href = "/blog/2023/tikzjax/";
           
         },
+      },{id: "post-deformation-of-a-wing",
+        
+          title: "deformation of a wing",
+        
+        description: "stress analysis of an airplane wing",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/aerostructures/";
+          
+        },
       },{id: "post-a-post-with-bibliography",
         
           title: "a post with bibliography",
