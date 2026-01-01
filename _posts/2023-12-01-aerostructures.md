@@ -8,6 +8,10 @@ categories:
 related_posts: false
 ---
 
+Consider a cross-section of an airplane wing, approximated as a cantilever beam. The wing is made of Aluminum 6061 (elastic modulus `$$ E = 70 $$` GPa, Poisson's ratio `$$ \nu = 0.3 $$`, and yield stress `$$ \sigma_y = 250 $$` MPa) and experiences a downward force `$$ P $$` applied at the shear center due to a turbojet engine.
+
+
+
 This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine. You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`. If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$.
 
 To use display mode, again surround your expression with `$$` and place it as a separate paragraph. Here is an example:
