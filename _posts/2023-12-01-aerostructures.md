@@ -37,7 +37,8 @@ $$
 q_{23}(s_2)
 &= \frac{-S_y}{I_{xx}} \int_{0}^{s_2} t r \, ds_2 + q_2 \\
 &= \frac{-S_y}{I_{xx}} t r s_2 - \frac{S_y}{2 I_{xx}} t r^2 = \frac{-S_y}{I_{xx}} t \left(rs_2 + \frac{r^2}{2}\right)
+\end{aligned}
 $$
 
-with $$ q_3(s_2=8_r) = \frac{-S_y}{I_{xx}} t \left(8r^2 + \frac{r^2}{2}\right) = \frac{-17S_y t r^2}{2 I_{xx}}. In the wall 34, $$ y = r \cos\theta $$:
+with $$ q_3(s_2=8_r) = \frac{-S_y}{I_{xx}} t \left(8r^2 + \frac{r^2}{2}\right) = \frac{-17S_y t r^2}{2 I_{xx}} $$. In the wall 34, $$ y = r \cos\theta $$:
 
