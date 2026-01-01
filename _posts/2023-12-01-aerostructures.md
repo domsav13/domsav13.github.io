@@ -8,7 +8,7 @@ categories:
 related_posts: false
 ---
 
-Consider a cross-section of an airplane wing, approximated as a cantilever beam. The wing is made of Aluminum 6061 (elastic modulus `$$ E = 70 $$` GPa, Poisson's ratio `$$ \nu = 0.3 $$`, and yield stress `$$ \sigma_y = 250 $$` MPa) and experiences a downward force `$$ P $$` applied at the shear center due to a turbojet engine.
+Consider a cross-section of an airplane wing, approximated as a cantilever beam. The wing is made of Aluminum 6061 (elastic modulus $$ E = 70 $$ GPa, Poisson's ratio $$ \nu = 0.3 $$, and yield stress $$ \sigma_y = 250 $$ MPa) and experiences a downward force $$ P $$ applied at the shear center due to a turbojet engine.
 
 
 
