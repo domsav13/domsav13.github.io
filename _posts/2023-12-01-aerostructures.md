@@ -12,7 +12,7 @@ Consider a cross-section of an airplane wing, approximated as a cantilever beam.
 
 First, the shear center of the cross-section will be calculated analytically. The shear flow $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ is used where $$ t $$ is the section thickness, $$ S_y $$ is a placeholder force located on the shear center, $$ I_{xx} $$ is the second moment of area of the section about the x-axis, and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ and $$ t = 2 $$, $$ I_{xx} $$ is calculated as:
 
-\[
+$$
 \begin{aligned}
 I_{xx}
 &= \frac{(2r)^3 t}{12}
@@ -24,7 +24,8 @@ I_{xx}
 + 2 t r^3 \cdot \frac{\pi}{4} \\[4pt]
 &= r^3 t\!\left(\frac{2}{3}+16+\frac{\pi}{2}\right) + \frac{4}{3} r t^3 .
 \end{aligned}
-\]
+$$
+
 
 
 
