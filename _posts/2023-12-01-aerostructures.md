@@ -24,13 +24,15 @@ I_{xx}
 \end{aligned}
 $$
 
-with the thin-wall approximation ($t^i = 0$ for $i \ge 2$). Now the shear flow is calculated for each major part of the section. In wall 12, $y = s_1$:
+with the thin-wall approximation ($t^i = 0$ for $i \ge 2$). Now the shear flow is calculated for each major part of the section. 
+In wall 12, $y = s_1$:
 
 $$
 q_{12}(s_1) = \frac{-S_y}{I_{xx}} \int_{0}^{s_1} t s_1 \, ds_1 = \frac{-S_y t}{2 I_{xx}} s_1^2
 $$
 
-with $$ q_2(s_1=r) = \frac{-S_y t}{2 I_{xx}} r^2 $$ at the boundary. In the wall 23, $$ y = r $$:
+with $$ q_2(s_1=r) = \frac{-S_y t}{2 I_{xx}} r^2 $$ at the boundary. 
+In wall 23, $$ y = r $$:
 
 $$
 \begin{aligned}
@@ -40,7 +42,8 @@ q_{23}(s_2)
 \end{aligned}
 $$
 
-with $$ q_3(s_2=8_r) = \frac{-S_y}{I_{xx}} t \left(8r^2 + \frac{r^2}{2}\right) = \frac{-17S_y t r^2}{2 I_{xx}} $$. In the wall 34, $$ y = r \cos\theta $$:
+with $$ q_3(s_2=8_r) = \frac{-S_y}{I_{xx}} t \left(8r^2 + \frac{r^2}{2}\right) = \frac{-17S_y t r^2}{2 I_{xx}} $$. 
+In wall 34, $$ y = r \cos\theta $$:
 
 $$
 \begin{aligned}
@@ -57,6 +60,16 @@ $$
 \begin{aligned}
 M_o
 &= 0 \\
-S_yx_s &= -2 \left( \int_{0}^{r} q_{12} 8r ds + \int_{0}^{8r} q_{23} r ds + \int_{0}^{\pi/2} q_{34} r^2 d\theta \right)
+S_yx_s &= -2 \left( \int_{0}^{r} q_{12} 8r ds + \int_{0}^{8r} q_{23} r ds + \int_{0}^{\pi/2} q_{34} r^2 d\theta \right) \\
+S_yx_s &= -2 \left(\frac{-4s_y}{3I_{xx}}tr^4 - \frac{36S_y}{I_{xx}}tr^4 - \frac{14.35S_y}{I_{xx}}tr^4 \right) \\
+S_yx_s &= \frac{87.37S_y}{I_{xx}}tr^4
 \end{aligned}
 $$
+
+Thus, the distance of the shear enter from the origin of the semi-circle is:
+
+$$
+x_s = \frac{87.37}{18.24(25)^3(2)} (2)(25)^4 = 119.75 mm
+$$
+
+
