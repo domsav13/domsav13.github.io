@@ -26,26 +26,18 @@ $$
 
 with the thin-wall approximation ($t^i = 0$ for $i \ge 2$). Now the shear flow is calculated for each major part of the section. In wall 12, $y = s_1$:
 
-
-
-
-
-This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine. You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`. If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$.
-
-To use display mode, again surround your expression with `$$` and place it as a separate paragraph. Here is an example:
-
 $$
-\sum_{k=1}^\infty |\langle x, e_k \rangle|^2 \leq \|x\|^2
+q_{12}(s_1) = \frac{-S_y}{I_{xx}} \int_{0}^{s_1} t s_1 \, ds_1 = \frac{-S_y t}{2 I_{xx}} s_1^2
 $$
 
-You can also use `\begin{equation}...\end{equation}` instead of `$$` for display mode math.
-MathJax will automatically number equations:
+with $$ q_2(s_1=r) = \frac{-S_y t}{2 I_{xx}} r^2 $$ at the boundary. In the wall 23, $$ y = r $$:
 
-\begin{equation}
-\label{eq:cauchy-schwarz}
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-\end{equation}
+$$
+\begin{aligned}
+q_{23}(s_2)
+&= \frac{-S_y}{I_{xx}} \int_{0}^{s_2} t r \, ds_2 + q_2 \\
+&= \frac{-S_y}{I_{xx}} t r s_2 - \frac{S_y}{2 I_{xx}} t r^2 = \frac{-S_y}{I_{xx}} t \left(rs_2 + \frac{r^2}{2}\right)
+$$
 
-and by adding `\label{...}` inside the equation environment, we can now refer to the equation using `\eqref`.
+with $$ q_3(s_2=8_r) = \frac{-S_y}{I_{xx}} t \left(8r^2 + \frac{r^2}{2}\right) = \frac{-17S_y t r^2}{2 I_{xx}}. In the wall 34, $$ y = r \cos\theta $$:
 
-Note that MathJax 3 is [a major re-write of MathJax](https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html) that brought a significant improvement to the loading and rendering speed, which is now [on par with KaTeX](http://www.intmath.com/cg5/katex-mathjax-comparison.php).
