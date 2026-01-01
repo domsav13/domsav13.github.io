@@ -23,7 +23,9 @@ I_{xx}
 &= r^3 t\left(\frac{2}{3}+16+\frac{\pi}{2}\right)=18.24r^3t
 \end{aligned}
 $$
-with the thin-wall approximation ($$ t^i = 0 $$ for $$ i \ge 2 $$). Now the shaer flow is calculated for each major part of the section. In the wall 12, $$ y = s_1 $$:
+
+with the thin-wall approximation ($t^i = 0$ for $i \ge 2$). Now the shear flow is calculated for each major part of the section. In wall 12, $y = s_1$:
+
 
 
 
