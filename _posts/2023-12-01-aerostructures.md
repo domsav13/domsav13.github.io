@@ -10,13 +10,15 @@ related_posts: false
 
 Consider a cross-section of an airplane wing, approximated as a cantilever beam. The wing is made of Aluminum 6061 (elastic modulus $$ E = 70 $$ GPa, Poisson's ratio $$ \nu = 0.3 $$, and yield stress $$ \sigma_y = 250 $$ MPa) and experiences a downward force $$ P $$ applied at the shear center due to a turbojet engine.
 
-First, the shear center of the cross-section will be calculated analytically. The shear flow $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ where $$ t $$ is the section thickness, $$ S_y $$ is a placeholder force located on the shear center, $$ I_{xx} $$ is the second moment of area of the section about the x-axis, and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ and $$ t = 2 $$, I_{xx} is calculated as:
+First, the shear center of the cross-section will be calculated analytically. The shear flow $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ is used where $$ t $$ is the section thickness, $$ S_y $$ is a placeholder force located on the shear center, $$ I_{xx} $$ is the second moment of area of the section about the x-axis, and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ and $$ t = 2 $$, $$ I_{xx} $$ is calculated as:
 
 \begin{equation}
 \begin{aligned}
 I_{xx} &= \frac{(2r)^3 t}{12}
 + 2\left(\frac{8 r t^3}{12} + 8 r^3 t\right)
 + 2 t r^3 \int_{0}^{\pi/2} \cos^2\theta \, d\theta
+&= \frac{2}{3}r^3t + 16r^3t + 2r^3t \int_{0}^{\pi/2} \cos^2\theta \, d\theta
+&= r^3t(\frac{2}{3}+16+\frac{\pi}{2} = 18.24r^3t
 \end{aligned}
 \end{equation}
 
