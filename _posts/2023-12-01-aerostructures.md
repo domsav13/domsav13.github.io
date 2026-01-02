@@ -154,13 +154,13 @@ From this analysis of the X-Y plane, the lowest allowable force is thus $$ P_2 $
 
 ### Lowest allowable force (X-Z Plane)
 
-In the X-Z plane, there are now two bending stresses instead of 1. The same analysis is performed for the three points/elements with the following Von Mises stress breakdown:
+In the X-Z plane, there are now two bending stresses instead of one. The same analysis is performed for the three points/elements with the following modified Von Mises stress breakdown:
 
 $$
 \sigma_v = \sqrt{\sigma_x^2 + \sigma_z^2 - \sigma_x\sigma_z + 3\tau_{xy}^2}
 $$
 
-**Point 1 (upper left vertex of cross-section)**: $$ \sigma_z $$ and $$ \tau_{xy} $$ remain the same. The bending stress $$ \sigma_x $$ is:
+**Point 1 (upper left vertex of cross-section)**: $$ \sigma_z $$ and $$ \tau_{xy} $$ remain the same as before. The bending stress $$ \sigma_x $$ is:
 
 $$
 \sigma_x = \frac{P(200+x_s)(25)}{570000} = 0.0138P
