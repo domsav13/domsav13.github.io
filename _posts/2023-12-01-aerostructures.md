@@ -10,7 +10,7 @@ related_posts: false
 
 Consider a cross-section of an airplane wing, approximated as a cantilever beam with length 1000 mm. The wing is made of Aluminum 6061 (elastic modulus $$ E = 70 $$ GPa, Poisson's ratio $$ \nu = 0.3 $$, and yield stress $$ \sigma_y = 250 $$ MPa) and experiences a downward force $$ P $$ applied at the shear center due to a turbojet engine.
 
-**### Shear flows and shear center**
+### Shear flows and shear center
 
 First, the shear center of the cross-section will be calculated analytically. The shear flow $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ (N/mm) is used where $$ t $$ is the section thickness (mm), $$ S_y $$ is a placeholder force located on the shear center (N), $$ I_{xx} $$ is the second moment of area of the section about the x-axis ($$ mm^4 $$), and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ mm and $$ t = 2 $$ mm, $$ I_{xx} $$ is calculated as:
 
@@ -77,7 +77,7 @@ $$
 x_s = \frac{87.37}{18.24(25)^3(2)} (2)(25)^4 = 119.75 mm
 $$
 
-**### Lowest allowable force (X-Y Plane)**
+### Lowest allowable force (X-Y Plane)
 
 With a maximum allowable yield stress of 250 MPa, the maximum Von Mises stress is determined with a safety factor of 2:
 
@@ -152,7 +152,7 @@ which results in the force **$$ P_3 = 6939.31 $$ N**.
 
 From this analysis of the X-Y plane, the lowest allowable force is thus $$ P_2 $$.
 
-**### Lowest allowable force (X-Z Plane)**
+### Lowest allowable force (X-Z Plane)
 
 In the X-Z plane, there are now two bending stresses instead of one. The same analysis is performed for the three points/elements with the following modified Von Mises stress breakdown:
 
