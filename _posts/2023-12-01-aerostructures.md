@@ -8,7 +8,7 @@ categories:
 related_posts: false
 ---
 
-Consider a cross-section of an airplane wing, approximated as a cantilever beam. The wing is made of Aluminum 6061 (elastic modulus $$ E = 70 $$ GPa, Poisson's ratio $$ \nu = 0.3 $$, and yield stress $$ \sigma_y = 250 $$ MPa) and experiences a downward force $$ P $$ applied at the shear center due to a turbojet engine.
+Consider a cross-section of an airplane wing, approximated as a cantilever beam with length 1000 mm. The wing is made of Aluminum 6061 (elastic modulus $$ E = 70 $$ GPa, Poisson's ratio $$ \nu = 0.3 $$, and yield stress $$ \sigma_y = 250 $$ MPa) and experiences a downward force $$ P $$ applied at the shear center due to a turbojet engine.
 
 ### Shear flows and shear center
 
@@ -93,7 +93,7 @@ $$
 
 where $$ \sigma_z = \frac{My}{I_{xx}} $$ and $$ \tau_{xy} = \frac{q}{t} $$. Three key points/elements are considered:
 
-Point 1 (upper left vertex of cross-section): The bending stress is:
+**Point 1 (upper left vertex of cross-section)**: The bending stress is:
 
 $$
 \sigma_z = \frac{My}{I_{xx}} = \frac{P(1000)(25)}{570000} = 0.0439P
@@ -113,7 +113,43 @@ $$
 (125)^2 &= 0.0019246P^2
 \end{aligned}
 $$
+
 which results in the force $$ P_1 = 2849.33 $$ N.
 
-Point 2 (
+**Point 2 ($$ r = 25 $$, $$ \theta = 0 $$)**: The bending stress remains the same. The shear stress is related to $$ q_3 $$:
+
+$$
+\tau_{xy} = \frac{q_3}{t} = \frac{\frac{-17Ptr^2}{2I_{xx}}{t} = -0.00932P
+$$
+
+Solving for $$ P $$ from the Von Mises stress:
+
+$$
+125^2 = (0.04386P)^2 + 3(0.00932P)^2
+$$
+
+which results in the force $$ P_2 = 2674.58 $$ N.
+
+**Point 3 ($$ r = 25 $$, $$ \theta = \pi/2 $$)**: The bending stress is:
+
+$$
+\sigma_z = \frac{P(1000)(0)}{570000} = 0
+$$
+
+The shear stress is related to $$ q_4 $$:
+
+$$
+\tau_{xy} = \frac{q_{34}(\theta=\pi/2)}{t} = \frac{\frac{-19Ptr^2}{2I_{xx}}{t} = -0.0104P
+$$
+
+Solving for $$ P $$ from the Von Mises stress:
+
+$$
+(125)^2 = 0^2 + 3(0.0104P)^2
+$$
+
+which results in the force $$ P_3 = 6939.31 $$ N.
+
+From this analysis of the X-Y plane, the lowest allowable force is thus $$ P_2 $$.
+
 ### Lowest allowable force (X-Z Plane)
