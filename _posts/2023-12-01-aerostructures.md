@@ -1,8 +1,8 @@
 ---
 layout: post
-title: deformation of a wing
+title: Deformation of a wing
 date: 2023-12-01 11:12:00-0400
-description: stress analysis of an airplane wing
+description: Stress analysis of an airplane wing
 tags: 
 categories: 
 related_posts: false
