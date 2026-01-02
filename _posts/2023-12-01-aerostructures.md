@@ -77,4 +77,43 @@ $$
 x_s = \frac{87.37}{18.24(25)^3(2)} (2)(25)^4 = 119.75 mm
 $$
 
-### Lowest allowable force, analytically
+### Lowest allowable force (X-Y Plane)
+
+With a maximum allowable yield stress of 250 MPa, the maximum Von Mises stress is determined with a safety factor of 2:
+
+$$
+\sigma_v = \frac{\sigma_y}{N} = \frac{250}{2} = 125 MPa
+$$
+
+By breaking this Von Mises stress into shear and bending stresses throughout the section, the lowest allowable value for the force $$ P $$ can be determined. In the X-Y plane, the Von Mises stress consists of:
+
+$$
+\sigma_v = \sqrt{\sigma_z^2 + 3\tau_{xy}^2}
+$$
+
+where $$ \sigma_z = \frac{My}{I_{xx}} $$ and $$ \tau_{xy} = \frac{q}{t} $$. Three key points/elements are considered:
+
+Point 1 (upper left vertex of cross-section): The bending stress is:
+
+$$
+\sigma_z = \frac{My}{I_{xx}} = \frac{P(1000)(25)}{570000} = 0.0439P
+$$
+
+The shear stress is related to the shear flow $$ q_2 $$:
+
+$$
+\tau_{xy} = \frac{q_2}{t} = \frac{\frac{-Ptr^2}{2I_{xx}}}{t} = (-5.482 \times 10^{-4})P
+$$
+
+Solving for $$ P $$ from the Von Mises stress breakdown:
+
+$$
+\begin{aligned}
+(125)^2 &= (0.04386P)^2 + 3(5.482 \times 10^{-4} P)^2 \\
+(125)^2 &= 0.0019246P^2
+\end{aligned}
+$$
+which results in the force $$ P_1 = 2849.33 $$ N.
+
+Point 2 (
+### Lowest allowable force (X-Z Plane)
