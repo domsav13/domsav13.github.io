@@ -186,9 +186,9 @@ ninja.data = [{
         },
       },{id: "post-deformation-of-a-wing",
         
-          title: "deformation of a wing",
+          title: "Deformation of a wing",
         
-        description: "stress analysis of an airplane wing",
+        description: "Stress analysis of an airplane wing",
         section: "Posts",
         handler: () => {
           
