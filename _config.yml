@@ -85,7 +85,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: My Portfolio # blog_name will be displayed in your blog page
-blog_description: a collection of my engineering projects
+blog_description: A collection of my engineering projects
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
