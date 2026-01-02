@@ -190,4 +190,4 @@ which results in the force **$$ P_5 = 2801.21 $$ N**.
 
 **Point 3 ($$ r = 25 $$, $$ \theta = \pi/2 $$)**: The bending stresses at this point are zero, which means the force created is identical from the previous section, **$$ P_6 = P_3 = 6939.31 $$ N**. 
 
-Therefore, from the X-Y and X-Z planes, the lowest force allowable for a Von Mises stress of 125 MPa is **$$ P_2 = 2674.58 $$ N**.
+Therefore, based on this analysis of the X-Y and X-Z planes, the lowest force allowable for a Von Mises stress of 125 MPa is **$$ P_2 = 2674.58 $$ N**.
