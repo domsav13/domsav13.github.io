@@ -119,7 +119,7 @@ which results in the force $$ P_1 = 2849.33 $$ N.
 **Point 2 ($$ r = 25 $$, $$ \theta = 0 $$)**: The bending stress remains the same. The shear stress is related to $$ q_3 $$:
 
 $$
-\tau_{xy} = \frac{q_3}{t} = \frac{\frac{-17Ptr^2}{2I_{xx}}{t} = -0.00932P
+\tau_{xy} = \frac{q_3}{t} = \frac{\frac{-17Ptr^2}{2I_{xx}}}{t} = -0.00932P
 $$
 
 Solving for $$ P $$ from the Von Mises stress:
@@ -139,7 +139,7 @@ $$
 The shear stress is related to $$ q_4 $$:
 
 $$
-\tau_{xy} = \frac{q_{34}(\theta=\pi/2)}{t} = \frac{\frac{-19Ptr^2}{2I_{xx}}{t} = -0.0104P
+\tau_{xy} = \frac{q_{34}(\theta=\pi/2)}{t} = \frac{\frac{-19Ptr^2}{2I_{xx}}}{t} = -0.0104P
 $$
 
 Solving for $$ P $$ from the Von Mises stress:
