@@ -114,7 +114,7 @@ $$
 \end{aligned}
 $$
 
-which results in the force $$ P_1 = 2849.33 $$ N.
+which results in the force **$$ P_1 = 2849.33 $$ N**.
 
 **Point 2 ($$ r = 25 $$, $$ \theta = 0 $$)**: The bending stress remains the same. The shear stress is related to $$ q_3 $$:
 
@@ -128,7 +128,7 @@ $$
 125^2 = (0.04386P)^2 + 3(0.00932P)^2
 $$
 
-which results in the force $$ P_2 = 2674.58 $$ N.
+which results in the force **$$ P_2 = 2674.58 $$ N**.
 
 **Point 3 ($$ r = 25 $$, $$ \theta = \pi/2 $$)**: The bending stress is:
 
@@ -148,8 +148,46 @@ $$
 (125)^2 = 0^2 + 3(0.0104P)^2
 $$
 
-which results in the force $$ P_3 = 6939.31 $$ N.
+which results in the force **$$ P_3 = 6939.31 $$ N**.
 
 From this analysis of the X-Y plane, the lowest allowable force is thus $$ P_2 $$.
 
 ### Lowest allowable force (X-Z Plane)
+
+In the X-Z plane, there are now two bending stresses instead of 1. The same analysis is performed for the three points/elements with the following Von Mises stress breakdown:
+
+$$
+\sigma_v = \sqrt{\sigma_x^2 + \sigma_z^2 - \sigma_x\sigma_z + 3\tau_{xy}^2}
+$$
+
+**Point 1 (upper left vertex of cross-section)**: $$ \sigma_z $$ and $$ \tau_{xy} $$ remain the same. The bending stress $$ \sigma_x $$ is:
+
+$$
+\sigma_x = \frac{P(200+x_s)(25)}{570000} = 0.0138P
+$$
+
+Solving for $$ P $$:
+
+$$
+(125)^2 = (0.0138P)^2 + (0.0439P)^2 - P^2(0.0138)(0.0439) + 3(5.482 \times 10^{-4} P)^2
+$$
+
+which results in the force **$$ P_4 = 3213.9 $$ N**.
+
+**Point 2 ($$ r = 25 $$, $$ \theta = 0 $$)**: $$ \sigma_z $$ and $$ \tau_{xy} $$ remain the same from the previous section. The bending stress $$ \sigma_x $$ is:
+
+$$
+\sigma_x = \frac{P x_s (25)}{570000} = 0.00506P
+$$
+
+Solving for $$ P $$:
+
+$$
+(125)^2 = (0.00506P)^2 + (0.0439P)^2 - P^2(0.00506)(0.0439) + 3(0.00932P)^2
+$$
+
+which results in the force **$$ P_5 = 2801.21 $$ N**.
+
+**Point 3 ($$ r = 25 $$, $$ \theta = \pi/2 $$)**: The bending stresses at this point are zero, which means the force created is identical from the previous section, **$$ P_6 = P_3 = 6939.31 $$ N**. 
+
+Therefore, from the X-Y and X-Z planes, the lowest force allowable for a Von Mises stress of 125 MPa is **$$ P_2 = 2674.58 $$ N**.
