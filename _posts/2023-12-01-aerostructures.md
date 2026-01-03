@@ -13,7 +13,7 @@ Consider a cross-section of an airplane wing, approximated as a cantilever beam 
 <div class="row mt-3">
   <div class="col-sm-12 mt-3 mt-md-0">
     {% include figure.liquid
-       path="assets/img/wing.png"
+       path="assets/img/wing.PNG"
        class="img-fluid rounded z-depth-1"
        alt="Cross-section of an airplane wing modeled as a cantilever beam"
     %}
