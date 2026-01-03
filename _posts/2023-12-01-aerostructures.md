@@ -16,7 +16,7 @@ Consider a cross-section of an airplane wing, approximated as a cantilever beam 
     </div>
 </div>
 <div class="caption">
-    A simple, elegant caption looks good between image rows, after each row, or doesn't have to be there at all.
+    The cross-section of an Aluminum wing with a narrow cut and shear flows ($$ s_1 $$, $$ s_2 $$, $$ s_3 $$), dimensions in millimeters. Not pictured: the force applied on the shear center; the location is solved below analytically.
 </div>
 
 ### Shear flows and shear center
