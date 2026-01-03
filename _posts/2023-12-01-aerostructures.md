@@ -16,7 +16,7 @@ Consider a cross-section of an airplane wing, approximated as a cantilever beam 
     </div>
 </div>
 <div class="caption">
-    The 
+    The cross-section of an Aluminum wing with a narrow cut and shear flows, with dimensions in millimeters.
 </div>
 
 ---
