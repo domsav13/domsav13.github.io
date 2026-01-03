@@ -75,7 +75,7 @@ $$
 M_o
 &= 0 \\
 S_yx_s &= -2 \left( \int_{0}^{r} q_{12} 8r ds + \int_{0}^{8r} q_{23} r ds + \int_{0}^{\pi/2} q_{34} r^2 d\theta \right) \\[4pt]
-S_yx_s &= -2 \left(\frac{-4S_y}{3I_{xx}}tr^4 - \frac{36S_y}{I_{xx}}tr^4 - \frac{14.35S_y}{I_{xx}}tr^4 \right) \\[4pt]
+S_yx_s &= -2 \left(\frac{-4S_y}{3I_{xx}}tr^4 - \frac{28S_y}{I_{xx}}tr^4 - \frac{14.35S_y}{I_{xx}}tr^4 \right) \\[4pt]
 S_yx_s &= \frac{87.37S_y}{I_{xx}}tr^4
 \end{aligned}
 $$
