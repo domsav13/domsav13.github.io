@@ -10,6 +10,20 @@ related_posts: false
 
 Consider a cross-section of an airplane wing, approximated as a cantilever beam with length 1000 mm. The wing is made of Aluminum 6061 (elastic modulus $$ E = 70 $$ GPa, Poisson's ratio $$ \nu = 0.3 $$, and yield stress $$ \sigma_y = 250 $$ MPa) and experiences a downward force $$ P $$ applied at the shear center due to a turbojet engine.
 
+<div class="row mt-3">
+  <div class="col-sm-12 mt-3 mt-md-0">
+    {% include figure.liquid
+       path="assets/img/wing.png"
+       class="img-fluid rounded z-depth-1"
+       alt="Cross-section of an airplane wing modeled as a cantilever beam"
+    %}
+  </div>
+</div>
+<div class="caption">
+  Cross-section of the aluminum wing, dimensions in millimeters. Not pictured: the force applied at the shear center, located at a distance from the right side of the section.
+</div>
+
+
 ### Shear flows and shear center
 
 First, the shear center of the cross-section will be calculated analytically. The shear flow $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ (N/mm) is used where $$ t $$ is the section thickness (mm), $$ S_y $$ is a placeholder force located on the shear center (N), $$ I_{xx} $$ is the second moment of area of the section about the x-axis ($$ mm^4 $$), and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ mm and $$ t = 2 $$ mm, $$ I_{xx} $$ is calculated as:
