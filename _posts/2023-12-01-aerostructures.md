@@ -16,12 +16,14 @@ Consider a cross-section of an airplane wing, approximated as a cantilever beam 
     </div>
 </div>
 <div class="caption">
-    The cross-section of an Aluminum wing with a narrow cut and shear flows ($$ s_1 $$, $$ s_2 $$, $$ s_3 $$), dimensions in millimeters. Not pictured: the force applied on the shear center; the location is solved below analytically.
+    The cross-section of an Aluminum wing with a narrow cut and shear flows, with dimensions in millimeters. Not pictured: the force applied on the shear center; the location is solved below.
 </div>
+
+---
 
 ### Shear flows and shear center
 
-First, the shear center of the cross-section will be calculated analytically. The shear flow $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ (N/mm) is used where $$ t $$ is the section thickness (mm), $$ S_y $$ is a placeholder force located on the shear center (N), $$ I_{xx} $$ is the second moment of area of the section about the x-axis ($$ mm^4 $$), and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ mm and $$ t = 2 $$ mm, $$ I_{xx} $$ is calculated as:
+First, the shear center of the cross-section will be calculated analytically. The shear flow definition $$ q(s) = \frac{-S_y}{I_{xx}} \int_0^s ty ds $$ (N/mm) is used where $$ t $$ is the section thickness (mm), $$ S_y $$ is a placeholder force located on the shear center (N), $$ I_{xx} $$ is the second moment of area of the section about the x-axis ($$ mm^4 $$), and $$ s $$ is the path of the shear flow. With $$ r = 25 $$ mm and $$ t = 2 $$ mm, $$ I_{xx} $$ is calculated as:
 
 $$
 \begin{aligned}
@@ -85,6 +87,17 @@ Thus, the distance of the shear enter from the origin of the semi-circle is:
 $$
 x_s = \frac{87.37}{18.24(25)^3(2)} (2)(25)^4 = 119.75 mm
 $$
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/shear_center.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    The 3D model of the wing with the downward force applied at the shear center.
+</div>
+
+---
 
 ### Lowest allowable force (X-Y Plane)
 
@@ -161,6 +174,8 @@ which results in the force **$$ P_3 = 6939.31 $$ N**.
 
 From this analysis of the X-Y plane, the lowest allowable force is thus $$ P_2 $$.
 
+---
+
 ### Lowest allowable force (X-Z Plane)
 
 In the X-Z plane, there are now two bending stresses instead of one. The same analysis is performed for the three points/elements with the following modified Von Mises stress breakdown:
@@ -200,3 +215,7 @@ which results in the force **$$ P_5 = 2801.21 $$ N**.
 **Point 3 ($$ r = 25 $$, $$ \theta = \pi/2 $$)**: The bending stresses at this point are zero, which means the force created is identical from the previous section, **$$ P_6 = P_3 = 6939.31 $$ N**. 
 
 Therefore, based on this analysis of the X-Y and X-Z planes, the lowest force allowable for a Von Mises stress of 125 MPa is **$$ P_2 = 2674.58 $$ N**.
+
+---
+
+### Finite element analysis: static stress
