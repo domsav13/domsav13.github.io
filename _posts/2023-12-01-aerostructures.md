@@ -16,7 +16,7 @@ Consider a cross-section of an airplane wing, approximated as a cantilever beam 
     </div>
 </div>
 <div class="caption">
-    The cross-section of an Aluminum wing with a narrow cut and shear flows, with dimensions in millimeters. Not pictured: the force applied on the shear center; the location is solved below.
+    The 
 </div>
 
 ---
