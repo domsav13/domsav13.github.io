@@ -258,24 +258,31 @@ Uniquely, when an applied load transverse load is located on the shear center, t
 <div class="row mt-3">
   <!-- Row 2 -->
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid
-      loading="eager"
-      path="assets/img/bending.gif"
-      class="img-fluid rounded z-depth-1"
-    %}
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="img-fluid rounded z-depth-1 w-100">
+      <source src="{{ '/assets/img/bending.mp4' | relative_url }}" type="video/mp4">
+    </video>
   </div>
 
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid
-      loading="eager"
-      path="assets/img/torsion.gif"
-      class="img-fluid rounded z-depth-1"
-    %}
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="img-fluid rounded z-depth-1 w-100">
+      <source src="{{ '/assets/img/torsion.mp4' | relative_url }}" type="video/mp4">
+    </video>
   </div>
 </div>
 
 <div class="caption">
   Bending vs torsion (top) and shear flow behavior (bottom).
 </div>
+
 
 
