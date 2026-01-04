@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-deformation-of-a-wing",
+        },{id: "post-mini-foosball-table",
+        
+          title: "Mini foosball table",
+        
+        description: "Design, manufacturing, and assembly of a scaled-down foosball table",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/foosball/";
+          
+        },
+      },{id: "post-deformation-of-a-wing",
         
           title: "Deformation of a wing",
         
