@@ -219,3 +219,50 @@ Therefore, based on this analysis of the X-Y and X-Z planes, the lowest force al
 ---
 
 ### Finite element analysis: static stress
+
+There are several shortcomings of the analytical approaches that become apparent when simulating the force and stresses in a numerical simulation. 
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/wing-analytical-results.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/wing-numerical-results.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    X
+</div>
+
+Uniquely, when an applied load transverse load is located on the shear center, the section (ideally) does not experience torsion (twisting). 
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/bending.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/torsion.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="row mt-3">
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/bending.gif"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/torsion.gif"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+</div>
+
+<div class="caption">
+  Bending vs torsion (top) and shear flow behavior (bottom).
+</div>
+
