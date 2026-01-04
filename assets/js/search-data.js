@@ -38,7 +38,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2023/foosball/";
+            window.location.href = "/blog/2024/foosball/";
           
         },
       },{id: "post-deformation-of-a-wing",
