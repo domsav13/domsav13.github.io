@@ -220,7 +220,7 @@ Therefore, based on this analysis of the X-Y and X-Z planes, the lowest force al
 
 ### Finite element analysis: static stress
 
-There are several shortcomings of the analytical approaches that become apparent when simulating the force and stresses in a numerical simulation. 
+There are several shortcomings of the analytical approaches (thin-wall approximation, narrow cut, Von Mises stress simplifications) that become apparent when simulating the force and stresses in a numerical simulation. First, the force found in the previous section overshot the predicted stress of 125 MPa, yielding 152 MPa as the wing's maximum Von Mises stress. With trial and error, a force closer to 2180 N fits the safety factor requirements, yielding around 124 MPa as the resulting maximum Von Mises stress. The scenarios are simulated using the default SOLIDWORKS mesh, a remote load at the calculated shear center, and a rigid geometry at the fixed end of the wing.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -231,10 +231,10 @@ There are several shortcomings of the analytical approaches that become apparent
     </div>
 </div>
 <div class="caption">
-    X
+    Stress analysis of the analytical (left) and numerical (right) forces that satisfy the safety factor 2 requirement (< 125 MPa).
 </div>
 
-Uniquely, when an applied load transverse load is located on the shear center, the section (ideally) does not experience torsion (twisting). 
+Uniquely, when an applied load transverse load is located on the shear center, the section (ideally) does not experience torsion (twisting). If the force is applied elsewhere, like in the center of the semi-circle, the section will experience much more stress due to the higher presence of torsion. Thus, understanding the forces and geometry of an airplane wing is vital for preventing unwanted rotation and ensuring predictable structural behavior.
 
 <div class="row mt-3">
   <!-- Row 1 -->
@@ -281,7 +281,7 @@ Uniquely, when an applied load transverse load is located on the shear center, t
 </div>
 
 <div class="caption">
-  Bending vs torsion (top) and shear flow behavior (bottom).
+  Pure bending (left) and twisting (right) simulation settings which showcase structural differences due to the location of the downward force.
 </div>
 
 
