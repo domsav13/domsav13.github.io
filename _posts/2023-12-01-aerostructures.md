@@ -237,14 +237,26 @@ There are several shortcomings of the analytical approaches that become apparent
 Uniquely, when an applied load transverse load is located on the shear center, the section (ideally) does not experience torsion (twisting). 
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/bending.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/torsion.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <!-- Row 1 -->
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/bending-sim.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/torsion-sim.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
 </div>
+
 <div class="row mt-3">
+  <!-- Row 2 -->
   <div class="col-sm-6 mt-3 mt-md-0">
     {% include figure.liquid
       loading="eager"
@@ -265,4 +277,5 @@ Uniquely, when an applied load transverse load is located on the shear center, t
 <div class="caption">
   Bending vs torsion (top) and shear flow behavior (bottom).
 </div>
+
 
