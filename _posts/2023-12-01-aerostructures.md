@@ -5,6 +5,7 @@ date: 2023-12-01 11:12:00-0400
 description: Stress analysis of an airplane wing
 tags: 
 categories: 
+thumbnail: assets/img/wing-analytical-results.jpg
 related_posts: false
 ---
 
