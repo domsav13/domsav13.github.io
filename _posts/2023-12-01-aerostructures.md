@@ -231,10 +231,10 @@ There are several shortcomings of the analytical approaches (thin-wall approxima
     </div>
 </div>
 <div class="caption">
-    Stress analysis of the analytical (left) and numerical (right) forces that satisfy the safety factor 2 requirement (< 125 MPa).
+    Stress analysis of the analytical (left) and numerical (right) downward forces. The analytical solution overshoots the desired stress value whereas the numerical solution is within the safety factor requirement (<125 MPa).
 </div>
 
-Uniquely, when an applied load transverse load is located on the shear center, the section (ideally) does not experience torsion (twisting). If the force is applied elsewhere, like in the center of the semi-circle, the section will experience much more stress due to the higher presence of torsion. Thus, understanding the forces and geometry of an airplane wing is vital for preventing unwanted rotation and ensuring predictable structural behavior.
+Uniquely, when an applied transverse load is located on the shear center, the section (ideally) does not experience torsion (twisting). If the force is applied elsewhere, like in the center of the semi-circle, the section will experience much more stress due to the higher presence of torsion. Thus, understanding the forces and geometry of an airplane wing is vital for preventing unwanted rotation and ensuring predictable structural behavior.
 
 <div class="row mt-3">
   <!-- Row 1 -->
