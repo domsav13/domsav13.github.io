@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-nonlinear-control-of-a-dc-motor",
+        },{id: "post-control-system-design-of-a-2d-rocket",
+        
+          title: "Control system design of a 2D rocket",
+        
+        description: "LQG and nonlinear control of a 2D rocket for hovering, landing, and waypoint flight",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/2drocket/";
+          
+        },
+      },{id: "post-nonlinear-control-of-a-dc-motor",
         
           title: "Nonlinear control of a DC motor",
         
