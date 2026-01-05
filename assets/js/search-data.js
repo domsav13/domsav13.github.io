@@ -52,6 +52,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/pendulum/";
           
         },
+      },{id: "post-iot-christmas-tree",
+        
+          title: "IoT Christmas Tree",
+        
+        description: "Coordinate- and sensor-based Christmas tree lighting",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/xmas-tree/";
+          
+        },
       },{id: "post-system-identification-of-a-dc-motor",
         
           title: "System identification of a DC motor",
