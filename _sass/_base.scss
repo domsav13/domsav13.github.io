@@ -1232,11 +1232,10 @@ swiper-container {
   --swiper-pagination-bullet-inactive-color: var(--global-text-color);
 }
 
-/* --- Swiper sizing (Dominic) --- */
 .media-swiper {
-  max-width: 900px;   /* keep it from going full-bleed */
+  max-width: 720px;   /* keep it from going full-bleed */
   margin: 1.5rem auto;
-  height: 5600px;      /* main knob: make this smaller/bigger */
+  height: 520px;      /* main knob: make this smaller/bigger */
 }
 
 @media (max-width: 768px) {
