@@ -45,7 +45,7 @@ ninja.data = [{
         
           title: "Control system design of a 2D rocket",
         
-        description: "LQG and nonlinear control of a 2D rocket for hovering, landing, and waypoint flight",
+        description: "LQG and model predictive control of a rocket for hovering, landing, and waypoint flight",
         section: "Posts",
         handler: () => {
           
