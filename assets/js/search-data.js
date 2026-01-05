@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-basic-and-optimal-control-of-a-double-pendulum",
+        },{id: "post-nonlinear-control-of-a-dc-motor",
+        
+          title: "Nonlinear control of a DC motor",
+        
+        description: "Control system design using Lyapunov stability and sliding manifolds",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/nonlinear-controls/";
+          
+        },
+      },{id: "post-basic-and-optimal-control-of-a-double-pendulum",
         
           title: "Basic and optimal control of a double pendulum",
         
