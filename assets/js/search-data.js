@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-eyes-in-the-pi-opencv",
+        },{id: "post-system-identification-of-a-dc-motor",
+        
+          title: "System identification of a DC motor",
+        
+        description: "White- and black-box approaches to motor control",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/sys-id/";
+          
+        },
+      },{id: "post-eyes-in-the-pi-opencv",
         
           title: "Eyes in the Pi (OpenCV)",
         
