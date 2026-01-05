@@ -85,6 +85,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/xmas-tree/";
           
         },
+      },{id: "post-mae-capstone",
+        
+          title: "MAE Capstone",
+        
+        description: "Design and build of a maritime spotlight",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/capstone/";
+          
+        },
       },{id: "post-system-identification-of-a-dc-motor",
         
           title: "System identification of a DC motor",
