@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-system-identification-of-a-dc-motor",
+        },{id: "post-basic-and-optimal-control-of-a-double-pendulum",
+        
+          title: "Basic and optimal control of a double pendulum",
+        
+        description: "Control system design using pole placement, linear quadratic regulator, and Kalman filter",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/pendulum/";
+          
+        },
+      },{id: "post-system-identification-of-a-dc-motor",
         
           title: "System identification of a DC motor",
         
