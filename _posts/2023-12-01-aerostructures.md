@@ -58,7 +58,7 @@ q_{23}(s_2)
 \end{aligned}
 $$
 
-with $$ q_3(s_2=8_r) = \frac{-S_y}{I_{xx}} t \left(8r^2 + \frac{r^2}{2}\right) = \frac{-17S_y t r^2}{2 I_{xx}} $$ at the boundary. 
+with $$ q_3(s_2=8r) = \frac{-S_y}{I_{xx}} t \left(8r^2 + \frac{r^2}{2}\right) = \frac{-17S_y t r^2}{2 I_{xx}} $$ at the boundary. 
 
 In wall 34, $$ y = r \cos\theta $$:
 
