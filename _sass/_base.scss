@@ -1232,6 +1232,43 @@ swiper-container {
   --swiper-pagination-bullet-inactive-color: var(--global-text-color);
 }
 
+/* --- Swiper sizing (Dominic) --- */
+.media-swiper {
+  max-width: 900px;   /* keep it from going full-bleed */
+  margin: 1.5rem auto;
+  height: 420px;      /* main knob: make this smaller/bigger */
+}
+
+@media (max-width: 768px) {
+  .media-swiper {
+    height: 260px;    /* smaller on phones */
+  }
+}
+
+.media-swiper swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* your includes wrap media in <figure>, so handle that too */
+.media-swiper figure {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-swiper img,
+.media-swiper video,
+.media-swiper iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* no cropping; use 'cover' if you WANT crop */
+}
+
 .ps-root {
   .ps-algorithm {
     margin: 0.8em 0;
