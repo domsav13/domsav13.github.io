@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-control-system-design-of-a-2d-rocket",
+        },{id: "post-deep-neural-networks-from-scratch",
+        
+          title: "Deep neural networks from scratch",
+        
+        description: "Training of neural networks on the MNIST dataset",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/mnist/";
+          
+        },
+      },{id: "post-control-system-design-of-a-2d-rocket",
         
           title: "Control system design of a 2D rocket",
         
