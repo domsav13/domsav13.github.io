@@ -30,9 +30,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-deep-neural-networks-from-scratch",
+        },{id: "post-building-deep-neural-networks-from-scratch",
         
-          title: "Deep neural networks from scratch",
+          title: "Building deep neural networks from scratch",
         
         description: "Training of neural networks on the MNIST dataset",
         section: "Posts",
