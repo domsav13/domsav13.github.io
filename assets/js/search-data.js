@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-mini-foosball-table",
+        },{id: "post-eyes-in-the-pi-opencv",
+        
+          title: "Eyes in the Pi (OpenCV)",
+        
+        description: "Pocket-sized computer vision",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/opencv/";
+          
+        },
+      },{id: "post-mini-foosball-table",
         
           title: "Mini foosball table",
         
