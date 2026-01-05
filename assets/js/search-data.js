@@ -118,6 +118,17 @@ ninja.data = [{
             window.location.href = "/blog/2024/foosball/";
           
         },
+      },{id: "post-wavelength-calibration-for-the-hubble-space-telescope",
+        
+          title: "Wavelength calibration for the Hubble Space Telescope",
+        
+        description: "R&amp;D of new calibration routine for the Cosmic Origins Spectrograph",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/stsci/";
+          
+        },
       },{id: "post-deformation-of-a-wing",
         
           title: "Deformation of a wing",
