@@ -41,9 +41,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/mnist/";
           
         },
-      },{id: "post-control-system-design-of-a-2d-rocket",
+      },{id: "post-controls-for-a-2d-rocket",
         
-          title: "Control system design of a 2D rocket",
+          title: "Controls for a 2D rocket",
         
         description: "LQG and model predictive control of a rocket for hovering, landing, and waypoint flight",
         section: "Posts",
