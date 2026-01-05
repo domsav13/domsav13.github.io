@@ -52,6 +52,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/2drocket/";
           
         },
+      },{id: "post-prosthetic-leg",
+        
+          title: "Prosthetic leg",
+        
+        description: "Requirement analysis and design of a knee prosthesis",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/prosthesis/";
+          
+        },
       },{id: "post-nonlinear-control-of-a-dc-motor",
         
           title: "Nonlinear control of a DC motor",
