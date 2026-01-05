@@ -38,7 +38,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/opencv/";
+            window.location.href = "/blog/2025/opencv/";
           
         },
       },{id: "post-mini-foosball-table",
