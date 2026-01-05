@@ -74,6 +74,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/pendulum/";
           
         },
+      },{id: "post-system-identification-of-a-dc-motor",
+        
+          title: "System identification of a DC motor",
+        
+        description: "White- and black-box approaches to motor control",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/sys-id/";
+          
+        },
       },{id: "post-iot-christmas-tree",
         
           title: "IoT Christmas Tree",
@@ -94,17 +105,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/capstone/";
-          
-        },
-      },{id: "post-system-identification-of-a-dc-motor",
-        
-          title: "System identification of a DC motor",
-        
-        description: "White- and black-box approaches to motor control",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/sys-id/";
           
         },
       },{id: "post-eyes-in-the-pi-opencv",
