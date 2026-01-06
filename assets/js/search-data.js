@@ -118,11 +118,11 @@ ninja.data = [{
             window.location.href = "/blog/2025/capstone/";
           
         },
-      },{id: "post-eyes-in-the-pi-opencv",
+      },{id: "post-object-tracking-and-identification",
         
-          title: "Eyes in the Pi (OpenCV)",
+          title: "Object tracking and identification",
         
-        description: "Pocket-sized computer vision",
+        description: "Pocket-sized computer vision (OpenCV)",
         section: "Posts",
         handler: () => {
           
