@@ -107,9 +107,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/xmas-tree/";
           
         },
-      },{id: "post-mae-capstone",
+      },{id: "post-mae-senior-capstone",
         
-          title: "MAE Capstone",
+          title: "MAE Senior Capstone",
         
         description: "Design and build of a maritime spotlight",
         section: "Posts",
