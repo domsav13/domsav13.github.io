@@ -140,9 +140,9 @@ ninja.data = [{
             window.location.href = "/blog/2024/foosball/";
           
         },
-      },{id: "post-wavelength-calibration-for-the-hubble-space-telescope",
+      },{id: "post-wavelength-calibration-for-hubble-space-telescope",
         
-          title: "Wavelength calibration for the Hubble Space Telescope",
+          title: "Wavelength calibration for Hubble Space Telescope",
         
         description: "R&amp;D of a new calibration routine for the Cosmic Origins Spectrograph",
         section: "Posts",
