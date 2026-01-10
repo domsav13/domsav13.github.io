@@ -131,7 +131,7 @@ ninja.data = [{
         },
       },{id: "post-mini-foosball-table",
         
-          title: "Mini foosball table",
+          title: "Mini Foosball Table",
         
         description: "Design, manufacturing, and assembly of a scaled-down foosball table",
         section: "Posts",
