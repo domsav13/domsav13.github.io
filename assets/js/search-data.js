@@ -142,7 +142,7 @@ ninja.data = [{
         },
       },{id: "post-wavelength-calibration-for-hubble-space-telescope",
         
-          title: "Wavelength calibration for Hubble Space Telescope",
+          title: "Wavelength Calibration for Hubble Space Telescope",
         
         description: "R&amp;D of a new calibration routine for the Cosmic Origins Spectrograph",
         section: "Posts",
