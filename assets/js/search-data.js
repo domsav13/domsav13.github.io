@@ -120,7 +120,7 @@ ninja.data = [{
         },
       },{id: "post-object-tracking-and-identification",
         
-          title: "Object tracking and identification",
+          title: "Object Tracking and Identification",
         
         description: "Pocket-sized computer vision (OpenCV)",
         section: "Posts",
@@ -153,7 +153,7 @@ ninja.data = [{
         },
       },{id: "post-deformation-of-a-wing",
         
-          title: "Deformation of a wing",
+          title: "Deformation of a Wing",
         
         description: "Stress analysis of an airplane wing",
         section: "Posts",
