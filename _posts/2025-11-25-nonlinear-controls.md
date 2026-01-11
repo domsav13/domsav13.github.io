@@ -197,5 +197,61 @@ $$
 
 ---
 
-#### Comparison
+##### Comparison
+
+For both direct and indirect MRAC, the controller successfully drive the reference model to follow commanded square, sine, and sawtooth inputs, but the physical plant struggles to match the model dynamics, most likely due to the very fast model parameters ($$ a_m=b_m=10 $$). The best tracking is obtained for centered sine waves, where the plant output roughly follows the model with some amplitude and phase, but square and sawtooth inputs produce larger tracking errors due to the sharper transitions in the signals. For offset inputs, the plant output appears to collapse to a constant. Because the offset introduces a constant component in the tracking error, the adaptation laws integrate this error, and the estimates ramp at the cost of responding poorly to the oscillatory component
+
+2 imgs
+
+---
+
+#### Nonlinear MRAC
+
+For the implemntation of nonlinear MRAC, it is assumed that the nonlinearities of the plant can be modeled by a radial basis function network such that:
+
+$$
+f(\omega)=\alpha^T \sigma(\omega) \quad\quad\quad g(\omega)=\beta^T \sigma(\omega)
+$$
+
+where $$ \alpha, \beta \in \mathbb{R}^q $$ are the weights for a network of radial basis functions (RBFs) $$ \sigma(\omega) = \begin{bmatrix}\rho_1(\omega)&...&\rho_q(\omega)\end{bmatrix}^T $$ where $$ \rho_i(\omega)=\exp(-(\epsilon(\omega-\omega_i))^2) $$ such that $$ \omega_i $$ is the center for each RBF and $$ \epsilon $$ is the width factor. The centers $$ \omega_i $$ are evenly spaced throughout the region of interests and $$ \epsilon = \frac{d}{2} $$ is initialized such that $$ d $$ is the distance between the centers. With this setup, and new weight estimates $$ \hat{\alpha} $$ and $$ \hat{\beta} $$, the resulting control law is:
+
+$$
+u=v_{in}=\frac{1}{\hat{\beta}^T \sigma(\omega)}(-\hat{\alpha}^T\sigma(\omega)-a_m\omega+b_mr)
+$$
+
+For stability, the Lyapunov function $$ v(e,\bar{\alpha},\bar{\beta})=\frac{1}{2}e^2+\frac{1}{2}\bar{\alpha}^T\Gamma_1^{-1}\bar{\alpha}+\frac{1}{2}\bar{\beta}^T\Gamma_2^{-1}\bar{\beta} $$ is chosen with the adaptation laws $$ \dot{\hat{\alpha}}=\Gamma_1\sigma(\omega)e $$ and $$ \dot{\hat{\beta}}=\Gamma_2\sigma(\omega)v_{in}e $$ where $$ \Gamma_1, \Gamma_2 \in \mathbb{R}^{q \times q} $$ are symmetric positive definite matrices. Again for analysis, the error terms are $$ e = \omega - \omega_m $$, $$ \bar{\alpha} = \hat{\alpha}-\alpha $$, and $$ \bar{\beta}=\hat{\beta}-\beta $$. Before proving $$ \dot{v}(e,\bar{\alpha},\bar{\beta}) \le 0 $$, the time derivative $$ \dot{e} $$ is expanded:
+
+$$
+\begin{aligned}
+\dot{e}&=\dot{\omega}-\dot{\omega}_m\\
+&= \alpha^T\sigma + \beta^T\sigma u + a_m\omega_m-b_mr\\
+&= \alpha^T\sigma + \hat{\beta}^T\sigma u - \bar{\beta}^T\sigma u + a_m\omega_m - b_mr\\
+&= \alpha^T\sigma - \hat{\alpha}^T\sigma - a_m\omega + b_mr -\bar{\beta}^T\sigma u + a_m\omega_m - b_mr\\
+&= (\alpha^T\sigma-\hat{\alpha}^T\sigma)-a_m(\omega-\omega_m)-\bar{\beta}^T\sigma u\\
+&= -a_me-\bar{\alpha}^T\sigma(\omega)-\bar{\beta}^T\sigma(\omega)u
+\end{aligned}
+$$
+
+which is done using the control law relation $$ \hat{\beta}^T\sigma u = -\hat{\alpha}^T\sigma - a_m\omega + b_mr $$. The time derivative of the Lyapunov function (proving negative definiteness) is thus:
+
+$$
+\begin{aligned}
+\dot{v}(e,\bar{\alpha},\bar{\beta})&=e\dot{e}+\bar{\alpha}^T\Gamma_1^{-1}\dot{\bar{\alpha}}+\bar{\beta}^T\Gamma_2^{-1}\dot{\bar{\beta}}\\
+&= e(-a_me-\bar{\alpha}^T\sigma-\bar{\beta}^T\sigma u)+\bar{\alpha}^T\Gamma_1^{-1}\dot{\bar{\alpha}}+\bar{\beta}^T\Gamma_2^{-1}\dot{\bar{\beta}}\\
+&= -a_me^2-e\bar{\alpha}^T\sigma - e\bar{\beta}^T\sigma u + \bar{\alpha}^T\Gamma_1^{-1}(\Gamma_1\sigma e)+\bar{\beta}^T\Gamma_2^{-1}(\Gamma_2\sigma u e)\\
+&= -a_me^2
+\end{aligned}
+$$
+
+using the relations $$ \dot{\bar{\alpha}} = \dot{\hat{\alpha}} $$ and $$ \dot{\bar{\beta}} = \dot{\hat{\beta}} $$.
+
+The tracking of this controller is presented below; the biggest differences between the linear and nonlinear approaches involve the controller's reaction to the offset reference signals. The offset signals push the motor plant into a completely different nonlinear regime, and the linear MRAC assumption of $$ \dot{\omega}= a\omega+bv_{in} $$ results in poor performance. However, the nonlinear MRAC explicitly models these nonlinearities using RBFs, allowing the controller to estimate the nonlinear functions of $$ \omega $$ instead of the model constants.
+
+img here
+
+The initial values for $$ \alpha $$ and $$ \beta $$ have significant effects on the results. The adaptations guarantees tracking stability, but not parameter convergence, so depending on the initial RBF weights, the controller may take a long time to become useful. If there was additional knowledge of the system dynamics, especially for the physics-based elements, the centers can be picked around regions where friction changes rapidly and $$ \epsilon $$ can be widened or narrowed to match expected values, which would reduce error and parameter drift. The biggest tradeoff is the size of the RBFN; smaller-dimension RBFs are under-parameterized which results in $$ \sigma(\omega) $$ being unable to represent the nonlinearities well. Thus, a moderate size must be tuned to allow enough flexibility to approximate the nonlinearities such that the parameter norms stay reasonable
+
+---
+
+### Sliding Mode Control
 
