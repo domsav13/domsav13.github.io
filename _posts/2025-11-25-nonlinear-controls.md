@@ -202,9 +202,20 @@ $$
 For both direct and indirect MRAC, the controller successfully drive the reference model to follow commanded square, sine, and sawtooth inputs, but the physical plant struggles to match the model dynamics, most likely due to the very fast model parameters ($$ a_m=b_m=10 $$). The best tracking is obtained for centered sine waves, where the plant output roughly follows the model with some amplitude and phase, but square and sawtooth inputs produce larger tracking errors due to the sharper transitions in the signals. For offset inputs, the plant output appears to collapse to a constant. Because the offset introduces a constant component in the tracking error, the adaptation laws integrate this error, and the estimates ramp at the cost of responding poorly to the oscillatory component
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/mrac-tracking.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/direct-mrac-tracking.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/indirect-mrac-tracking.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
 </div>
 <div class="caption">
     Comparison of tracking performances between direct and indirect MRAC for a variety of wave forms.
@@ -342,7 +353,6 @@ Under the previously established assumptions, it is shown that the control law $
     %}
   </div>
 </div>
-</div>
 <div class="caption">
   SMC trajectories for the control law v = -14sign(s) showing fast convergence to the manifold.
 </div>
@@ -392,7 +402,6 @@ with $$ \beta_{min} = 3 $$. The new design shows a much smoother trajectory and 
     %}
   </div>
 </div>
-</div>
 <div class="caption">
   Modified SMC trajectories with a modified beta function integrated in the control law.
 </div>
@@ -420,7 +429,6 @@ for varying $$ \alpha $$. The tanh controllers clearly give much smaller amplitu
       class="img-fluid rounded z-depth-1"
     %}
   </div>
-</div>
 </div>
 <div class="caption">
   Smoothing effects using the hyperbolic tangent function compared with previous SMC trajectories.
