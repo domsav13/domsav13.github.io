@@ -65,7 +65,7 @@ ninja.data = [{
         },
       },{id: "post-nonlinear-control-of-a-dc-motor",
         
-          title: "Nonlinear control of a DC motor",
+          title: "Nonlinear Control of a DC Motor",
         
         description: "Control system design using Lyapunov stability and sliding manifolds",
         section: "Posts",
