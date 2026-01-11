@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nonlinear control of a DC motor
+title: Nonlinear Control of a DC Motor
 date: 2025-11-25 11:12:00-0400
 description: Control system design using Lyapunov stability and sliding manifolds
 tags: 
@@ -255,3 +255,95 @@ The initial values for $$ \alpha $$ and $$ \beta $$ have significant effects on 
 
 ### Sliding Mode Control
 
+As opposed to adaptive control which seeks to estimate and adjust a control law to the unknown dynamics of a system, sliding mode control (SMC) forces the dynamics to conform to a predefined stable manifold within the subspace. Given the full system dynamics of the plant,
+
+$$
+\dot{\theta} = \omega \quad\quad\quad \dot{\omega}=f(\omega)+g(\omega)v_{in}
+$$
+
+the sliding surface $$ s = a\theta+\omega $$ with $$ a \ge 0 $$ is chosen. On the surface $$ s = 0 $$ we have:
+
+$$
+a\theta+\omega=0 \implies \omega = -a\theta
+$$
+
+With $$ \dot{\theta}=\omega $$, along the surface is:
+
+$$
+\dot{\theta}=-a\theta
+$$
+
+This is a stable first-order linear ODE with the solution $$ \theta(t)=\theta(t_0)e^{-a(t-t_0)} $$. Since $$ a \ge 0 $$, it is guaranteed that $$ \lim_{t\rightarrow \infty} \theta(t) = 0 $$. Therefore, if the state can be constrained to this surface, the state will go to zero. A key component of SMC is bounding the value:
+
+$$
+\left | \frac{\a\omega-f(\omega)}{g(\omega)} \right | \le \rho(\omega)
+$$
+
+To bound this value with the electromechanical system, it is assumed that the system has aerodynamic drag and Coulomb friction with dynamics of the form:
+
+$$
+\dot{\omega}=bv_{in}-c_l\omega-c_a\omega^2-f_c\sign(\omega)
+$$
+
+Thus, in the initial SMC notation, $$ g(\omega) = b $$, $$ f(\omega)=-c_l\omega-c_a\omega^2-f_c\sign(\omega) $$ and the bounded value becomes:
+
+$$
+\left | \frac{(a+c_l)\omega+c_a\omega^2+f_c\sign(\omega)}{b} \right | \le \rho(\omega)
+$$
+
+Given that $$ v_{in} $$ has a maximum value of 14 V and the chosen control law $$ v_{in} = -\beta(\omega)\sign(s) $$ where $$ \beta(\omega) \ge \rho(\omega)+\beta_0 $$ and $$ \beta_0 > 0 $$, the inequality that relates the value $$ a $$ to the other model parameters as derived:
+
+$$
+|v_{in}|\le 14 \implies \beta(\omega) \le 14
+\rho(\omega)+\beta_0 \le 14 \implies \left | \frac{(a+c_l)\omega+c_a\omega^2+f_c\sign(\omega)}{b} \right | + \beta_0 \le 14
+$$
+
+Finally, for a range of $$ \omega $$, $$ a $$ is chosen such that:
+
+$$
+|(a+c_l)\omega+c_a\omega^2+f_c\sign(\omega)| \le b(14-\beta_0)
+$$
+
+The model parameters for the following experiments are chosen as $$ b = 1 rad/s^2/V $$, $$ c_l = 0.01 1/s $$, $$ c_a = 0.025 1/rad $$, and $$ f_c = 2.5 m/s^2 $$.
+
+--- 
+
+#### SMC Experiments
+
+Under the previously established assumptions, it is shown that the control law $$ v_{in} = -14\sign(s) $$ will work as a sliding mode controller for the system. Over the entire range of $$ \omega $$, the curve $$ \rho(\omega) $$ stays below the constraint $$ \beta = 14 $$ and the chosen control law is strong enough to dominate the worst-case drag and Coulomb friction and force trajectories toward the surface $$ s = 0 $$. For $$ a = 0.001 $$, $$ \rho(\omega) $$ is relatively small and there is tight chattering around zero speed with essentially no drift. In the second case of $$ a = 0.01 $$, there is more coupling between position and speed, so the average value of $$ \omega $$ shifts slightly away from zero as $$ \theta $$ evolves; however, the system still remains close to the sliding surface with similar chattering. 
+
+2 imgs here
+
+As opposed to the previous cases, when $$ a = 0.1 $$, SMC breaks as $$ \rho(\omega) > \beta = 14 $$. The function $$ \omega(t) $$ does not hover around a constant value and instead slowly drifts upwards. Increasing $$ a $$ makes the sliding surface steeper in the state space and thus the controller has to fight harder against the plant nonlinearities.
+
+img
+
+--- 
+
+#### Chatter
+
+To make the trajectories of $$ \omega $$ less jarring, $$ \beta(x) $$ can be modified to be large enough to satisfy $$ \beta(x) > \rho(\omega) $$ but not too large as to not cause severe chatter. The constant $$ \beta = 14 $$ is much larger than needed for most $$ \omega $$ values and large $$ \beta $$ forces $$ v_{in} = -\beta\sign(s) $$ to switch violently. A new switching gain is designed as:
+
+$$
+\beta(x)=\rho(\omega)+\beta_{margin}
+$$
+
+where $$ \beta_{margin} $$ is a small positive constant. The new gain is also enforced by:
+
+$$
+\beta(x) = \max(\rho(\omega)+\beta_{margin},\beta_{min})
+$$
+
+with $$ \beta_{min} = 3 $$. The new design shows a much smoother trajectory and a smaller oscillation amplitude that preserves the sliding behavior
+
+2 imgs
+
+Another way of confronting the chatter is to add a smoothing function in the control law, which can be done by using:
+
+$$
+v_{in}=-\beta(x)\tanh(\alpha \omega)
+$$
+
+for varying $$ \alpha $$. The tanh controllers clearly give much smaller amplitude oscillations than previous controllers. By increasing $$ \alpha $$, the controller gains tighter tracking that is more robust but results in more chatter whereas decreasing $$ \alpha $$ leads to smoother control with less chatter but softer response. As $$ \alpha \rightarrow \infty $$, the tanh function begins to approximate the signum function, which was the original function inside the control law, and this evolution can be observed below.
+
+2 imgs
