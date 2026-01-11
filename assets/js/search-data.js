@@ -87,7 +87,7 @@ ninja.data = [{
         },
       },{id: "post-system-identification-of-a-dc-motor",
         
-          title: "System identification of a DC motor",
+          title: "System Identification of a DC Motor",
         
         description: "White- and black-box approaches to motor control",
         section: "Posts",
