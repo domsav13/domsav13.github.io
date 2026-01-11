@@ -50,12 +50,16 @@ $$
 \dot{\omega}=a \omega + bv_{in}
 $$
 
-To achieve an equivalence for the reference model, the controller $$ v_{in}^* = \frac{1}{b}\left(-(a+a_m)\omega+b_mr\right) is used:
+To achieve an equivalence for the reference model, the controller
+$$
+v_{in}^* = \frac{1}{b}\left(-(a+a_m)\omega+b_mr\right)
+$$
+is used:
 
 $$
 \begin{aligned}
 \dot{\omega}&=a \omega+bv_{in}^*\\
-&= a\omega + b\left(\frac{1}{b}(-(a+a_m)\omega+b_mr)\right)
+&= a\omega + b\left(\frac{1}{b}(-(a+a_m)\omega+b_mr)\right)\\
 &= -a_m\omega+b_mr
 \end{aligned}
 $$
@@ -65,7 +69,11 @@ where $$ a_m=b_m=10 $$ are chosen to match the previously established reference 
 ---
 ##### Direct MRAC
 
-In direct MRAC, the controller gains are directly adapted with weights $$ \hat{\alpha} $$ and $$ \hat{\beta} $$ for $$ v_{in} = -\hat{\alpha}\omega+\hat{\beta}r $$. The dynamics become:
+In direct MRAC, the controller gains are directly adapted with weights $$ \hat{\alpha} $$ and $$ \hat{\beta} $$ for
+$$
+v_{in} = -\hat{\alpha}\omega+\hat{\beta}r
+$$
+The dynamics become:
 
 $$
 \begin{aligned}
@@ -75,7 +83,16 @@ $$
 \end{aligned}
 $$
 
-where the unknown, ideal gains $$ (\alpha, \beta) $$ match the model: $$ a - b\alpha = -_am $$ and $$ b\beta=b_m $$. With the error terms $$ \bar{\alpha}=\hat{\alpha}-\alpha $$ and $$ \bar{\beta}=\hat{\beta}-\beta $$, the dynamics are expanded further to:
+where the unknown, ideal gains $$ (\alpha, \beta) $$ match the model:
+$$
+a - b\alpha = -a_m
+$$
+and
+$$
+b\beta=b_m
+$$
+
+With the error terms $$ \bar{\alpha}=\hat{\alpha}-\alpha $$ and $$ \bar{\beta}=\hat{\beta}-\beta $$, the dynamics are expanded further to:
 
 $$
 \begin{aligned}
@@ -86,7 +103,19 @@ $$
 \end{aligned}
 $$
 
-The Lyapunov function $$ V(e,\bar{\alpha},\bar{\beta}) = \frac{1}{2}e^2+\frac{|b|}{2\gamma_1}\bar{\alpha}^2+\frac{|b|}{2\gamma_2}\bar{\beta}^2 $$ (where $$ \gamma_1 $$ and $$ \gamma_2 $$ are positive real values) is used with the adaptation laws $$ \dot{\hat{\alpha}}=\gamma_1 sign(b) \omega e $$ and $$ \dot{\hat{\beta}} = -\gamma_2 sign(b) r e $$ to guarantee negative definiteness in the tracking error, which ensures stability of the MRAC closed-loop system. Before showing that $$ \dot{V} \le 0 $$ with this setup, the time derivative of the error term $$ e = \omega - \omega_m $$ is needed:
+The Lyapunov function
+$$
+V(e,\bar{\alpha},\bar{\beta}) = \frac{1}{2}e^2+\frac{|b|}{2\gamma_1}\bar{\alpha}^2+\frac{|b|}{2\gamma_2}\bar{\beta}^2
+$$
+(where $$ \gamma_1 $$ and $$ \gamma_2 $$ are positive real values) is used with the adaptation laws
+$$
+\dot{\hat{\alpha}}=\gamma_1 \operatorname{sign}(b)\,\omega e
+$$
+and
+$$
+\dot{\hat{\beta}} = -\gamma_2 \operatorname{sign}(b)\, r e
+$$
+to guarantee negative definiteness in the tracking error, which ensures stability of the MRAC closed-loop system. Before showing that $$ \dot{V} \le 0 $$ with this setup, the time derivative of the error term $$ e = \omega - \omega_m $$ is needed:
 
 $$
 \begin{aligned}
@@ -101,8 +130,11 @@ Using the aforementioned Lyapunov function, its derivative (proving negative def
 
 $$
 \begin{aligned}
-\dot{V}(e,\bar{\alpha},\bar{\beta})&=e\dot{e}+|b|sign(b)\omega e \bar{\alpha} - |b|sign(b)r e \bar{\beta}\\
-&= e(-a_me-b\bar{\alpha}\omega+b\bar{\beta}r)+b\omegae\bar{\alpha}-bre\bar{\beta}\\
+\dot{V}(e,\bar{\alpha},\bar{\beta})
+&=e\dot{e}+|b|\operatorname{sign}(b)\omega e \bar{\alpha}
+ - |b|\operatorname{sign}(b)r e \bar{\beta}\\
+&= e(-a_me-b\bar{\alpha}\omega+b\bar{\beta}r)
+ +b\omega e\bar{\alpha}-br e\bar{\beta}\\
 &= -a_me^2
 \end{aligned}
 $$
@@ -122,14 +154,26 @@ With the error terms $$ \bar{a} = \hat{a} - a $$ and $$ \bar{b}=\hat{b}-b $$, th
 $$
 \begin{aligned}
 \dot{\omega}&=a\omega+bv_{in}\\
-&= a\omega + \frac{b}{\hat{b}\left(-(a_m+\hat{a})\omega+b_mr\right)\\
-&= a\omega + (1-\frac{\bar{b}}{\hat{b}}\left(-(a_m+\hat{a})\omega+b_mr\right)\\
+&= a\omega + \frac{b}{\hat{b}}\left(-(a_m+\hat{a})\omega+b_mr\right)\\
+&= a\omega + \left(1-\frac{\bar{b}}{\hat{b}}\right)\left(-(a_m+\hat{a})\omega+b_mr\right)\\
 &= a\omega-(a_m+\hat{a})\omega+b_mr+\frac{\bar{b}}{\hat{b}}(a_m+\hat{a})\omega-\frac{\bar{b}}{\hat{b}}b_mr\\
-&= -(a_m+\bar{a})\omega+b_mr+\frac{\bar{b}{\hat{b}}\left((a_m+\hat{a})\omega-b_mr\right)
+&= -(a_m+\bar{a})\omega+b_mr+\frac{\bar{b}}{\hat{b}}\left((a_m+\hat{a})\omega-b_mr\right)
 \end{aligned}
 $$
 
-With the adaptation laws $$ \dot{\hat{a}} = \gamma_1\omegae $$ and $$ \dot{\hat{b}} = \gamma_2v_{in}e $$ the time derivative of the Lyapunov function $$ v(e,\bar{a},\bar{b}) = \frac{1}{2}e^2 + \frac{1}{2\gamma_1}\bar{a}^2+\frac{1}{2\gamma_2}\bar{b}^2 $$ will be negative definite, where $$ \gamma_1 $$ and $$ \gamma_2 $$ are positive real values. To show this, the time derivative of the error term $$ e = \omega - \omega_m $$ is needed again:
+With the adaptation laws
+$$
+\dot{\hat{a}} = \gamma_1\omega e
+$$
+and
+$$
+\dot{\hat{b}} = \gamma_2v_{in}e
+$$
+the time derivative of the Lyapunov function
+$$
+v(e,\bar{a},\bar{b}) = \frac{1}{2}e^2 + \frac{1}{2\gamma_1}\bar{a}^2+\frac{1}{2\gamma_2}\bar{b}^2
+$$
+will be negative definite, where $$ \gamma_1 $$ and $$ \gamma_2 $$ are positive real values. To show this, the time derivative of the error term $$ e = \omega - \omega_m $$ is needed again:
 
 $$
 \begin{aligned}
@@ -143,11 +187,15 @@ Then, the derivative of the Lyapunov function (proving negative definiteness) is
 
 $$
 \begin{aligned}
-\dot{v}(e,\bar{a},\bar{b})&=e\dot{e}+\frac{1}{\gamma_1}\bar{a}\dot{\bar{a}}+\frac{1}{\gamma_2}\bar{b}\dot{\bar{b}}\\
-&= e\left(-a_me-\bar{a}\omega+\frac{\bar{b}}{\hat{b}}\left((a_m+\hat{a})\omega-b_mr\right)+\bar{a}\omegae+\bar{b}ev_{in}\\
-&= -a_me^2+\frac{\bar{b}}{\hat{b}}e\left((a_m+\hat{a})\omega-b_mr\right)+\bar{b}e\frac{1}{\hat{b}}\left(-(a_m+\hat{a})\omega+b_mr\right)\\
+\dot{v}(e,\bar{a},\bar{b})
+&=e\dot{e}+\frac{1}{\gamma_1}\bar{a}\dot{\bar{a}}+\frac{1}{\gamma_2}\bar{b}\dot{\bar{b}}\\
+&= e\left(-a_me-\bar{a}\omega+\frac{\bar{b}}{\hat{b}}\left((a_m+\hat{a})\omega-b_mr\right)\right)
+ +\bar{a}\omega e+\bar{b}e v_{in}\\
 &= -a_me^2
+\end{aligned}
+$$
 
 ---
 
 #### Comparison
+
