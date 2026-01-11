@@ -201,7 +201,14 @@ $$
 
 For both direct and indirect MRAC, the controller successfully drive the reference model to follow commanded square, sine, and sawtooth inputs, but the physical plant struggles to match the model dynamics, most likely due to the very fast model parameters ($$ a_m=b_m=10 $$). The best tracking is obtained for centered sine waves, where the plant output roughly follows the model with some amplitude and phase, but square and sawtooth inputs produce larger tracking errors due to the sharper transitions in the signals. For offset inputs, the plant output appears to collapse to a constant. Because the offset introduces a constant component in the tracking error, the adaptation laws integrate this error, and the estimates ramp at the cost of responding poorly to the oscillatory component
 
-2 imgs
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/mrac-tracking.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Comparison of tracking performances between direct and indirect MRAC for a variety of wave forms.
+</div>
 
 ---
 
@@ -247,7 +254,14 @@ using the relations $$ \dot{\bar{\alpha}} = \dot{\hat{\alpha}} $$ and $$ \dot{\b
 
 The tracking of this controller is presented below; the biggest differences between the linear and nonlinear approaches involve the controller's reaction to the offset reference signals. The offset signals push the motor plant into a completely different nonlinear regime, and the linear MRAC assumption of $$ \dot{\omega}= a\omega+bv_{in} $$ results in poor performance. However, the nonlinear MRAC explicitly models these nonlinearities using RBFs, allowing the controller to estimate the nonlinear functions of $$ \omega $$ instead of the model constants.
 
-img here
+<div class="row mt-3">
+    <div class="col-12 col-md-7 mx-auto mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/nonlinear-mrac-tracking.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Tracking performances for the nonlinear-RBFN MRAC for the square, sine, and sawtooth reference signals.
+</div>
 
 The initial values for $$ \alpha $$ and $$ \beta $$ have significant effects on the results. The adaptations guarantees tracking stability, but not parameter convergence, so depending on the initial RBF weights, the controller may take a long time to become useful. If there was additional knowledge of the system dynamics, especially for the physics-based elements, the centers can be picked around regions where friction changes rapidly and $$ \epsilon $$ can be widened or narrowed to match expected values, which would reduce error and parameter drift. The biggest tradeoff is the size of the RBFN; smaller-dimension RBFs are under-parameterized which results in $$ \sigma(\omega) $$ being unable to represent the nonlinearities well. Thus, a moderate size must be tuned to allow enough flexibility to approximate the nonlinearities such that the parameter norms stay reasonable
 
@@ -312,11 +326,37 @@ The model parameters for the following experiments are chosen as $$ b = 1 rad/s^
 
 Under the previously established assumptions, it is shown that the control law $$ v_{in} = -14\operatorname{sign}(s) $$ will work as a sliding mode controller for the system. Over the entire range of $$ \omega $$, the curve $$ \rho(\omega) $$ stays below the constraint $$ \beta = 14 $$ and the chosen control law is strong enough to dominate the worst-case drag and Coulomb friction and force trajectories toward the surface $$ s = 0 $$. For $$ a = 0.001 $$, $$ \rho(\omega) $$ is relatively small and there is tight chattering around zero speed with essentially no drift. In the second case of $$ a = 0.01 $$, there is more coupling between position and speed, so the average value of $$ \omega $$ shifts slightly away from zero as $$ \theta $$ evolves; however, the system still remains close to the sliding surface with similar chattering. 
 
-2 imgs here
+<div class="row mt-3">
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/smc-a-0.001.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/smc-a-0.01.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+</div>
+</div>
+<div class="caption">
+  SMC trajectories for the control law v = -14sign(s) showing fast convergence to the manifold.
+</div>
 
 As opposed to the previous cases, when $$ a = 0.1 $$, SMC breaks as $$ \rho(\omega) > \beta = 14 $$. The function $$ \omega(t) $$ does not hover around a constant value and instead slowly drifts upwards. Increasing $$ a $$ makes the sliding surface steeper in the state space and thus the controller has to fight harder against the plant nonlinearities.
 
-img
+<div class="row mt-3">
+    <div class="col-12 col-md-7 mx-auto mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/smc-a-0.1.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Example SMC trajectory under the previous control law in which the inequality is violated.
+</div>
 
 --- 
 
@@ -336,7 +376,26 @@ $$
 
 with $$ \beta_{min} = 3 $$. The new design shows a much smoother trajectory and a smaller oscillation amplitude that preserves the sliding behavior
 
-2 imgs
+<div class="row mt-3">
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/smc-a-0.001-better.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/smc-a-0.01-better.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+</div>
+</div>
+<div class="caption">
+  Modified SMC trajectories with a modified beta function integrated in the control law.
+</div>
 
 Another way of confronting the chatter is to add a smoothing function in the control law, which can be done by using:
 
@@ -346,4 +405,23 @@ $$
 
 for varying $$ \alpha $$. The tanh controllers clearly give much smaller amplitude oscillations than previous controllers. By increasing $$ \alpha $$, the controller gains tighter tracking that is more robust but results in more chatter whereas decreasing $$ \alpha $$ leads to smoother control with less chatter but softer response. As $$ \alpha \rightarrow \infty $$, the tanh function begins to approximate the signum function, which was the original function inside the control law, and this evolution can be observed below.
 
-2 imgs
+<div class="row mt-3">
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/smc-a-0.001-tanh.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/smc-a-0.01-tanh.jpg"
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+</div>
+</div>
+<div class="caption">
+  Smoothing effects using the hyperbolic tangent function compared with previous SMC trajectories.
+</div>
