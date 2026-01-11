@@ -276,32 +276,32 @@ $$
 This is a stable first-order linear ODE with the solution $$ \theta(t)=\theta(t_0)e^{-a(t-t_0)} $$. Since $$ a \ge 0 $$, it is guaranteed that $$ \lim_{t\rightarrow \infty} \theta(t) = 0 $$. Therefore, if the state can be constrained to this surface, the state will go to zero. A key component of SMC is bounding the value:
 
 $$
-\left | \frac{\a\omega-f(\omega)}{g(\omega)} \right | \le \rho(\omega)
+\left | \frac{a\omega-f(\omega)}{g(\omega)} \right | \le \rho(\omega)
 $$
 
 To bound this value with the electromechanical system, it is assumed that the system has aerodynamic drag and Coulomb friction with dynamics of the form:
 
 $$
-\dot{\omega}=bv_{in}-c_l\omega-c_a\omega^2-f_c\sign(\omega)
+\dot{\omega}=bv_{in}-c_l\omega-c_a\omega^2-f_c\operatorname{sign}(\omega)
 $$
 
-Thus, in the initial SMC notation, $$ g(\omega) = b $$, $$ f(\omega)=-c_l\omega-c_a\omega^2-f_c\sign(\omega) $$ and the bounded value becomes:
+Thus, in the initial SMC notation, $$ g(\omega) = b $$, $$ f(\omega)=-c_l\omega-c_a\omega^2-f_c\operatorname{sign}(\omega) $$ and the bounded value becomes:
 
 $$
-\left | \frac{(a+c_l)\omega+c_a\omega^2+f_c\sign(\omega)}{b} \right | \le \rho(\omega)
+\left | \frac{(a+c_l)\omega+c_a\omega^2+f_c\operatorname{sign}(\omega)}{b} \right | \le \rho(\omega)
 $$
 
-Given that $$ v_{in} $$ has a maximum value of 14 V and the chosen control law $$ v_{in} = -\beta(\omega)\sign(s) $$ where $$ \beta(\omega) \ge \rho(\omega)+\beta_0 $$ and $$ \beta_0 > 0 $$, the inequality that relates the value $$ a $$ to the other model parameters as derived:
+Given that $$ v_{in} $$ has a maximum value of 14 V and the chosen control law $$ v_{in} = -\beta(\omega)\operatorname{sign}(s) $$ where $$ \beta(\omega) \ge \rho(\omega)+\beta_0 $$ and $$ \beta_0 > 0 $$, the inequality that relates the value $$ a $$ to the other model parameters as derived:
 
 $$
 |v_{in}|\le 14 \implies \beta(\omega) \le 14
-\rho(\omega)+\beta_0 \le 14 \implies \left | \frac{(a+c_l)\omega+c_a\omega^2+f_c\sign(\omega)}{b} \right | + \beta_0 \le 14
+\rho(\omega)+\beta_0 \le 14 \implies \left | \frac{(a+c_l)\omega+c_a\omega^2+f_c\operatorname{sign}(\omega)}{b} \right | + \beta_0 \le 14
 $$
 
 Finally, for a range of $$ \omega $$, $$ a $$ is chosen such that:
 
 $$
-|(a+c_l)\omega+c_a\omega^2+f_c\sign(\omega)| \le b(14-\beta_0)
+|(a+c_l)\omega+c_a\omega^2+f_c\operatorname{sign}(\omega)| \le b(14-\beta_0)
 $$
 
 The model parameters for the following experiments are chosen as $$ b = 1 rad/s^2/V $$, $$ c_l = 0.01 1/s $$, $$ c_a = 0.025 1/rad $$, and $$ f_c = 2.5 m/s^2 $$.
@@ -310,7 +310,7 @@ The model parameters for the following experiments are chosen as $$ b = 1 rad/s^
 
 #### SMC Experiments
 
-Under the previously established assumptions, it is shown that the control law $$ v_{in} = -14\sign(s) $$ will work as a sliding mode controller for the system. Over the entire range of $$ \omega $$, the curve $$ \rho(\omega) $$ stays below the constraint $$ \beta = 14 $$ and the chosen control law is strong enough to dominate the worst-case drag and Coulomb friction and force trajectories toward the surface $$ s = 0 $$. For $$ a = 0.001 $$, $$ \rho(\omega) $$ is relatively small and there is tight chattering around zero speed with essentially no drift. In the second case of $$ a = 0.01 $$, there is more coupling between position and speed, so the average value of $$ \omega $$ shifts slightly away from zero as $$ \theta $$ evolves; however, the system still remains close to the sliding surface with similar chattering. 
+Under the previously established assumptions, it is shown that the control law $$ v_{in} = -14\operatorname{sign}(s) $$ will work as a sliding mode controller for the system. Over the entire range of $$ \omega $$, the curve $$ \rho(\omega) $$ stays below the constraint $$ \beta = 14 $$ and the chosen control law is strong enough to dominate the worst-case drag and Coulomb friction and force trajectories toward the surface $$ s = 0 $$. For $$ a = 0.001 $$, $$ \rho(\omega) $$ is relatively small and there is tight chattering around zero speed with essentially no drift. In the second case of $$ a = 0.01 $$, there is more coupling between position and speed, so the average value of $$ \omega $$ shifts slightly away from zero as $$ \theta $$ evolves; however, the system still remains close to the sliding surface with similar chattering. 
 
 2 imgs here
 
@@ -322,7 +322,7 @@ img
 
 #### Chatter
 
-To make the trajectories of $$ \omega $$ less jarring, $$ \beta(x) $$ can be modified to be large enough to satisfy $$ \beta(x) > \rho(\omega) $$ but not too large as to not cause severe chatter. The constant $$ \beta = 14 $$ is much larger than needed for most $$ \omega $$ values and large $$ \beta $$ forces $$ v_{in} = -\beta\sign(s) $$ to switch violently. A new switching gain is designed as:
+To make the trajectories of $$ \omega $$ less jarring, $$ \beta(x) $$ can be modified to be large enough to satisfy $$ \beta(x) > \rho(\omega) $$ but not too large as to not cause severe chatter. The constant $$ \beta = 14 $$ is much larger than needed for most $$ \omega $$ values and large $$ \beta $$ forces $$ v_{in} = -\beta\operatorname{sign}(s) $$ to switch violently. A new switching gain is designed as:
 
 $$
 \beta(x)=\rho(\omega)+\beta_{margin}
