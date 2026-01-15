@@ -43,7 +43,7 @@ ninja.data = [{
         },
       },{id: "post-controls-for-a-2d-rocket",
         
-          title: "Controls for a 2D rocket",
+          title: "Controls for a 2D Rocket",
         
         description: "LQG and model predictive control of a rocket for hovering, landing, and waypoint flight",
         section: "Posts",
