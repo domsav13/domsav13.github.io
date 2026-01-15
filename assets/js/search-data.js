@@ -76,7 +76,7 @@ ninja.data = [{
         },
       },{id: "post-basic-and-optimal-control-of-a-double-pendulum",
         
-          title: "Basic and optimal control of a double pendulum",
+          title: "Basic and Optimal Control of a Double Pendulum",
         
         description: "Control system design using pole placement, linear quadratic regulator, and Kalman filter",
         section: "Posts",
