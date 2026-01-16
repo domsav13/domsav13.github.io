@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated summa cum laude from GW, earning the Bachelor of Science! 🎆:tada:
+Graduated summa cum laude from GW, earning my bachelor's degree! 🎆:tada:
