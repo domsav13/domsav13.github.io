@@ -5,8 +5,8 @@
       value: Dominic Savarino
     - name: Email
       value: dsavarino@gwu.edu
-    - name: Phone
-      value: (717) 525-3206
+    - name: Location
+      value: Washington, DC
     - name: LinkedIn
       value: '<a href="https://linkedin.com/in/dominic-savarino" target="_blank">linkedin.com/in/dominic-savarino</a>'
     - name: Website
@@ -69,4 +69,38 @@
       year: 2022
       description:
         - "Conducted surveys in street and infrastructure quality for Pennsylvania's 8th Engineering District."
+
+- title: Organizations
+  type: time_table
+  contents:
+    - title: Member
+      institution: The American Society of Mechanical Engineers
+      year: 2024-present
+      description:
+        - Advances mechanical engineering through standards, education, and worldwide professional development.
+      
+    - title: President (GWU, 2024-25) and Member
+      institution: Pi Tau Sigma
+      year: 2023-present
+      description:
+        - The international honor society recognizing academic excellence in mechanical engineering.
+
+    - title: Member
+      institution: Tau Beta Pi
+      year: 2024-present
+      description:
+        - The oldest engineering honor society, recognizing exceptional academic achievement and integrity.
+
+    - title: First-Year Mentor
+      institution: GWU School of Engineering and Applied Science Student Peer Advisory Network
+      year: 2023-2025
+      description:
+        - Mentored incoming students in the transition to their undergraduate degrees, serving as a volunteer for school admissions, recruitment, and student life.
+
+    - title: Member
+      institution: GWU University Honors Program
+      year: 2021
+      description:
+        - Fosters interdisciplinary scholarship, leadership, and academic excellence at GWU.
+
       
