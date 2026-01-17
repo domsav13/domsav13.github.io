@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "post-building-deep-neural-networks-from-scratch",
         
-          title: "Building deep neural networks from scratch",
+          title: "Building Deep Neural Networks from Scratch",
         
         description: "Training of neural networks on the MNIST dataset",
         section: "Posts",
