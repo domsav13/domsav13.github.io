@@ -89,7 +89,7 @@ ninja.data = [{
         
           title: "System Identification of a DC Motor",
         
-        description: "White- and black-box approaches to motor control",
+        description: "White- and black-box approaches to motor dynamics",
         section: "Posts",
         handler: () => {
           
