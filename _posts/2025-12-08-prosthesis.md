@@ -52,10 +52,14 @@ The overarching objectives were discretized into traceable requirements supporte
 The final design uses a blade concept for the foot, an adjuster for height, and a piston concept for the knee joint. Fasteners and bearings are not included. 
 
 <style>
-/* Scope everything so we don't accidentally affect other parts of the page */
-.prosthesis-media .media-card {
+/* Base container */
+.prosthesis-media { margin-top: 1rem; }
+.prosthesis-caption { margin-top: 0.5rem; margin-bottom: 1.5rem; }
+
+/* Image card (left) */
+.prosthesis-media .media-card.image-card {
   width: 100%;
-  max-width: 520px;         /* keeps both media from getting comically large */
+  max-width: 520px;   /* larger */
   margin: 0 auto;
 }
 
@@ -66,7 +70,14 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
   border-radius: 0.5rem;
 }
 
-/* Portrait video: fixed aspect ratio, no bars */
+/* Video card (right) */
+.prosthesis-media .media-card.video-card {
+  width: 100%;
+  max-width: 440px;   /* 🔽 slightly smaller */
+  margin: 0 auto;
+}
+
+/* Portrait video */
 .prosthesis-media .video-wrap {
   width: 100%;
   aspect-ratio: 9 / 16;
@@ -80,17 +91,14 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
   object-fit: cover;
   display: block;
 }
-
-/* spacing */
-.prosthesis-media { margin-top: 1rem; }
-.prosthesis-caption { margin-top: 0.5rem; margin-bottom: 1.5rem; }
 </style>
 
 <div class="prosthesis-media">
   <div class="row mt-4 g-4 align-items-start">
+
     <!-- Image -->
     <div class="col-12 col-lg-6 text-center">
-      <div class="media-card">
+      <div class="media-card image-card">
         {% include figure.liquid
           path="assets/img/prosthesis-labeled.jpg"
           class="media-img rounded z-depth-1"
@@ -98,9 +106,10 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
         %}
       </div>
     </div>
+
     <!-- Video -->
     <div class="col-12 col-lg-6 text-center">
-      <div class="media-card rounded z-depth-1">
+      <div class="media-card video-card rounded z-depth-1">
         <div class="video-wrap">
           <video autoplay loop muted playsinline preload="metadata">
             <source src="{{ 'assets/img/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
@@ -108,10 +117,11 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
         </div>
       </div>
     </div>
+
   </div>
 
   <div class="caption text-center prosthesis-caption">
-    X
+    Side view of the prosthetic leg with itemized labels (left) and an exploded view animation of the full assembly (right).
   </div>
 </div>
 
