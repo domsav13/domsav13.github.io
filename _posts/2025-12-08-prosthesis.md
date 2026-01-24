@@ -72,7 +72,7 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
       preload="metadata"
       class="img-fluid rounded z-depth-1"
       style="max-width: 100%; height: auto;">
-      <source src="{{ '/assets/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
+      <source src="{{ '/assets/img/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
     </video>
   </div>
 </div>
