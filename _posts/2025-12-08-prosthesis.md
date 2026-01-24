@@ -118,5 +118,14 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
 The main manufacturable components are:
 
 | Number | Part | Material |
-| --- | --- | --- |
-| 1 |  |  |
+| ------ | ---- | -------- |
+| 1 | Quadricep connector socket | PBT General Purpose |
+| 2 | Knee jont | Aluminum 6061 Alloy |
+| 3 | Piston | Ti-6Al-4V Solution treated and aged (SS) |
+| 4 | Piston cylinder | Ti-6Al-4V Solution treated and aged (SS) |
+| 5 | Calf frame | Nylon 101 |
+| 6 | Leg height adjuster | Aluminum 6061 Alloy |
+| 7 | Pylon | Ti-6Al-4V Solution treated and aged (SS) |
+| 8 | Foot connector | Aluminum 6061 Alloy | 
+| 9 | Foot sole | Zoltek Panex 33 |
+| 10 | Ankle suspension | Commercially Pure CP-Ti UNS R50400 (SS) |
