@@ -52,65 +52,71 @@ The overarching objectives were discretized into traceable requirements supporte
 The final design uses a blade concept for the foot, an adjuster for height, and a piston concept for the knee joint. Fasteners and bearings are not included. 
 
 <style>
-.media-box {
-  height: 520px;
+/* Scope everything so we don't accidentally affect other parts of the page */
+.prosthesis-media .media-card {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 520px;         /* keeps both media from getting comically large */
   margin: 0 auto;
 }
 
-.media-img img {
-  max-height: 100%;
-  width: auto;
-  object-fit: contain;
+.prosthesis-media .media-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
 }
 
-.media-video {
-  height: 100%;
-  width: auto;
+/* Portrait video: fixed aspect ratio, no bars */
+.prosthesis-media .video-wrap {
+  width: 100%;
   aspect-ratio: 9 / 16;
-  object-fit: cover;
+  overflow: hidden;
+  border-radius: 0.5rem;
 }
+
+.prosthesis-media .video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* spacing */
+.prosthesis-media { margin-top: 1rem; }
+.prosthesis-caption { margin-top: 0.5rem; margin-bottom: 1.5rem; }
 </style>
-<div class="row mt-4 align-items-center">
 
-  <!-- Image -->
-  <div class="col-12 col-md-6 text-center">
-    <div class="media-box">
-      {% include figure.liquid
-        path="assets/img/prosthesis-labeled.jpg"
-        class="media-img rounded z-depth-1"
-        loading="eager"
-      %}
+<div class="prosthesis-media">
+  <div class="row mt-4 g-4 align-items-start">
+    <!-- Image -->
+    <div class="col-12 col-lg-6 text-center">
+      <div class="media-card">
+        {% include figure.liquid
+          path="assets/img/prosthesis-labeled.jpg"
+          class="media-img rounded z-depth-1"
+          loading="eager"
+        %}
+      </div>
+    </div>
+    <!-- Video -->
+    <div class="col-12 col-lg-6 text-center">
+      <div class="media-card rounded z-depth-1">
+        <div class="video-wrap">
+          <video autoplay loop muted playsinline preload="metadata">
+            <source src="{{ 'assets/img/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Video -->
-  <div class="col-12 col-md-6 text-center">
-    <div class="media-box">
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        preload="metadata"
-        class="media-video rounded z-depth-1">
-        <source src="{{ 'assets/img/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
-      </video>
-    </div>
+  <div class="caption text-center prosthesis-caption">
+    X
   </div>
-
-</div>
-
-<div class="caption text-center mt-2">
-  X
 </div>
 
 The main manufacturable components are:
+
 | Number | Part | Material |
 | --- | --- | --- |
-| 1 | 
-
-
+| 1 |  |  |
