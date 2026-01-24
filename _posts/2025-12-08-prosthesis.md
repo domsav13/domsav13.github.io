@@ -52,6 +52,7 @@ The overarching objectives were discretized into traceable requirements supporte
 The final design uses a blade concept for the foot, an adjuster for height, and a piston concept for the knee joint. Fasteners and bearings are not included. 
 
 <div class="row mt-4 align-items-center">
+
   <!-- Image -->
   <div class="col-12 col-md-6 text-center">
     {% include figure.liquid
@@ -63,17 +64,19 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
   </div>
 
   <!-- Video -->
-<div class="col-12 col-md-6 text-center">
-  <div class="video-portrait">
-    <video
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="metadata">
-      <source src="{{ 'assets/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
-    </video>
+  <div class="col-12 col-md-6 text-center">
+    <div class="video-portrait">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata">
+        <source src="{{ 'assets/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
+      </video>
+    </div>
   </div>
+
 </div>
 
 <div class="caption text-center mt-2">
