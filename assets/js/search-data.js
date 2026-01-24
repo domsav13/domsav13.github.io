@@ -34,7 +34,7 @@ ninja.data = [{
         
           title: "Building Deep Neural Networks from Scratch",
         
-        description: "Training of neural networks on the MNIST dataset",
+        description: "Training of neural networks on the MNIST dataset using only NumPy",
         section: "Posts",
         handler: () => {
           
