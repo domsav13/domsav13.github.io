@@ -23,6 +23,8 @@ The objectives of the prosthetic leg are:
 
 The overarching objectives were discretized into traceable requirements supported by rationale:
 
+---
+
 | No. | Requirement | Rationale |
 | --- | ----------- | --------- |
 | 1 | The prosthetic shall withstand up to 200 lbs of force | The device can endure up to the total body weight of the client | 
@@ -47,6 +49,31 @@ The overarching objectives were discretized into traceable requirements supporte
 
 ### Design and Assembly
 
+The final design uses a blade concept for the foot, an adjuster for height, and a piston concept for the knee joint. Fasteners and bearings are not included. 
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/prosthesis-labeled.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+  <div class="col-12 col-md-4">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      class="img-fluid rounded z-depth-1 w-100">
+      <source src="{{ '/assets/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </div>
+</div>
+<div class="caption">
+    X
+</div>
+
+The main manufacturable components are:
+| Number | Part | Material |
+| --- | --- | --- |
+| 1 | 
 
 
