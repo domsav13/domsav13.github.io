@@ -72,7 +72,7 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
         muted
         playsinline
         preload="metadata">
-        <source src="{{ 'assets/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
+        <source src="{{ 'assets/img/prosthesis-exploded.mp4' | relative_url }}" type="video/mp4">
       </video>
     </div>
   </div>
