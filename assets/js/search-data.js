@@ -54,9 +54,9 @@ ninja.data = [{
         },
       },{id: "post-prosthetic-leg",
         
-          title: "Prosthetic leg",
+          title: "Prosthetic Leg",
         
-        description: "Requirement analysis and design of a knee prosthesis",
+        description: "Requirement analysis and design of a knee prosthesis concept",
         section: "Posts",
         handler: () => {
           
