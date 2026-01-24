@@ -73,7 +73,7 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
 /* Video card (right) */
 .prosthesis-media .media-card.video-card {
   width: 100%;
-  max-width: 440px;   /* 🔽 slightly smaller */
+  max-width: 400px;   /* 🔽 slightly smaller */
   margin: 0 auto;
 }
 
