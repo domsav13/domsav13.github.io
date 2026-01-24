@@ -9,7 +9,7 @@ thumbnail: assets/img/prosthesis.jpg
 related_posts: false
 ---
 
-This course project focused on setting requirements for a knee prosthesis concept. An emphasis was placed on designing for assembly, machinability, material selection, and simulation to verify requirements would be met. Some aspects that were not fully explored include fastener selection and friction.
+This course project focused on setting requirements for a knee prosthesis concept and designing it using CAD software. An emphasis was placed on designing for assembly, machinability, material selection, and simulation to verify requirements would be met. Some aspects that were not fully explored include fastener selection and friction.
 
 ---
 
@@ -73,7 +73,7 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
 /* Video card (right) */
 .prosthesis-media .media-card.video-card {
   width: 100%;
-  max-width: 400px;   /* 🔽 slightly smaller */
+  max-width: 360px;   /* 🔽 slightly smaller */
   margin: 0 auto;
 }
 
@@ -125,9 +125,9 @@ The final design uses a blade concept for the foot, an adjuster for height, and 
   </div>
 </div>
 
-The main manufacturable components are:
+The main components and their selected materials are:
 
-| Number | Part | Material |
+| Item | Part | Material |
 | ------ | ---- | -------- |
 | 1 | Quadricep connector socket | PBT General Purpose |
 | 2 | Knee jont | Aluminum 6061 Alloy |
