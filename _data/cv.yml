@@ -1,115 +1,130 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Name
-      value: Dominic Savarino
-    - name: Email
-      value: dsavarino@gwu.edu
-    - name: Location
-      value: Washington, DC
-    - name: LinkedIn
-      value: '<a href="https://linkedin.com/in/dominic-savarino" target="_blank">linkedin.com/in/dominic-savarino</a>'
-    - name: Website
-      value: '<a href="https://domsav13.github.io" target="_blank">domsav13.github.io</a>'
+cv:
+  name: Dominic Savarino
+  label: Mechanical Engineering (Robotics, Mechatronics & Controls)
+  email: dsavarino@gwu.edu
+  website: https://domsav13.github.io
 
-- title: Education
-  type: time_table
-  contents:
-    - title: Master of Science (M.S.)
-      institution: The George Washington University, Washington, District of Columbia, United States of America
-      year: 2025-2026
-      description:
-        - Mechanical Engineering
-        - "Focus area: Robotics, Mechatronics, and Controls"
-    - title: Bachelor of Science (B.S.)
-      institution: The George Washington University, Washington, District of Columbia, United States of America
-      year: 2021-2025
-      description:
-        - "Major: Mechanical and Aerospace Engineering"
-        - "Minor: Mathematics"
-    - title: Student Exchange
-      institution: The University of New South Wales, Sydney, New South Wales, Australia
-      year: 2023
+  address:
+    city: Washington
+    region: DC
+    countryCode: US
 
-    Skills and Interests:
+  social_networks:
+    - network: LinkedIn
+      username: dominic-savarino
+
+  sections:
+    Education:
+      - institution: The George Washington University
+        location: Washington, DC, United States of America
+        studyType: Master of Science (M.S.)
+        area: Mechanical Engineering
+        start_date: 2025
+        end_date: 2026
+        highlights:
+          - "Focus area: Robotics, Mechatronics, and Controls"
+
+      - institution: The George Washington University
+        location: Washington, DC, United States of America
+        studyType: Bachelor of Science (B.S.)
+        area: Mechanical and Aerospace Engineering
+        start_date: 2021
+        end_date: 2025
+        highlights:
+          - "Minor: Mathematics"
+
+      - institution: The University of New South Wales
+        location: Sydney, New South Wales, Australia
+        studyType: Student Exchange
+        area: ""
+        start_date: 2023
+        end_date: 2023
+
+    Skills:
       - name: Programming
-        keywords: "Python (PyTorch, TensorFlow, OpenCV), MATLAB/Simulink, C/C++, ROS/ROS2 (ongoing), Raspberry Pi, Arduino"
+        keywords:
+          - Python (PyTorch, TensorFlow, OpenCV)
+          - MATLAB/Simulink
+          - C/C++
+          - ROS/ROS2 (ongoing)
+          - Raspberry Pi
+          - Arduino
+
       - name: CAD/Analysis
-        keywords: "SolidWorks (CSWA level), Onshape, Ansys Fluent, AutoCAD"
+        keywords:
+          - SolidWorks (CSWA level)
+          - Onshape
+          - Ansys Fluent
+          - AutoCAD
+
       - name: Coursework
-        keywords: "Electromechanical Controls, Mechatronics, Robotics Vision and Perception, Robotic Systems"
+        keywords:
+          - Electromechanical Controls
+          - Mechatronics
+          - Robotics Vision and Perception
+          - Robotic Systems
 
-- title: Experience
-  type: time_table
-  contents:
-    - title: Graduate Teaching Assistant
-      institution: GWU Department of Mechanical and Aerospace Engineering
-      year: 2025-2026
-      description:
-        - Teaches the lab section for MAE 1004.
-      
-    - title: Community Ambassador
-      institution: GWU Office for Study Abroad
-      year: 2023-2025
-      description:
-        - Led outreach, programming, and peer advising for prospective study abroad students.
+    Experience:
+      - company: GWU Department of Mechanical and Aerospace Engineering
+        position: Graduate Teaching Assistant
+        location: Washington, DC
+        start_date: 2025
+        end_date: 2026
+        highlights:
+          - Teaches the lab section for MAE 1004.
 
-    - title: Undergraduate Research Assistant
-      institution: GWU Intelligent Aerospace Systems Lab
-      year: 2024-2025
-      description:
-        - Simulated flight scenarios and explored reinforcement learning as a control strategy for mid-air deconfliction.
+      - company: GWU Office for Study Abroad
+        position: Community Ambassador
+        location: Washington, DC
+        start_date: 2023
+        end_date: 2025
+        highlights:
+          - Led outreach, programming, and peer advising for prospective study abroad students.
 
-    - title: Instruments Intern
-      institution: Space Telescope Science Institute
-      year: 2023-2024
-      description:
-        - Designed a new wavelength calibration method for the Cosmic Origins Spectrograph onboard the Hubble Space Telescope.
+      - company: GWU Intelligent Aerospace Systems Lab
+        position: Undergraduate Research Assistant
+        location: Washington, DC
+        start_date: 2024
+        end_date: 2025
+        highlights:
+          - Simulated flight scenarios and explored reinforcement learning as a control strategy for mid-air deconfliction.
 
-    - title: Student Instructor
-      institution: GWU Honey W. Nashman Center for Civic Engagement and Public Service
-      year: 2022
-      description:
-        - "Organized and led classroom activities for the AnBryce Foundation's Saturday Institute."
+      - company: Space Telescope Science Institute
+        position: Instruments Intern
+        location: Baltimore, MD
+        start_date: 2023
+        end_date: 2024
+        highlights:
+          - Designed a new wavelength calibration method for the Cosmic Origins Spectrograph onboard the Hubble Space Telescope.
 
-    - title: Engineering, Scientific, and Technical Intern
-      institution: Pennsylvania Department of Transportation
-      year: 2022
-      description:
-        - "Conducted surveys in street and infrastructure quality for Pennsylvania's 8th Engineering District."
+      - company: GWU Honey W. Nashman Center for Civic Engagement and Public Service
+        position: Student Instructor
+        location: Washington, DC
+        start_date: 2022
+        end_date: 2022
+        highlights:
+          - Organized and led classroom activities for the AnBryce Foundation's Saturday Institute.
 
-- title: Organizations
-  type: time_table
-  contents:
-    - title: Member
-      institution: The American Society of Mechanical Engineers
-      year: 2024-present
-      description:
-        - Advances mechanical engineering through standards, education, and worldwide professional development.
-      
-    - title: President (GWU, 2024-25) and Member
-      institution: Pi Tau Sigma
-      year: 2023-present
-      description:
-        - The international honor society recognizing academic excellence in mechanical engineering.
+      - company: Pennsylvania Department of Transportation
+        position: Engineering, Scientific, and Technical Intern
+        location: Pennsylvania
+        start_date: 2022
+        end_date: 2022
+        highlights:
+          - Conducted surveys in street and infrastructure quality for Pennsylvania's 8th Engineering District.
 
-    - title: Member
-      institution: Tau Beta Pi
-      year: 2024-present
-      description:
-        - The oldest engineering honor society, recognizing exceptional academic achievement and integrity.
+    Organizations:
+      - label: The American Society of Mechanical Engineers (ASME)
+        details: "Member (2024–Present) — Advances mechanical engineering through standards, education, and worldwide professional development."
 
-    - title: First-Year Mentor
-      institution: GWU School of Engineering and Applied Science Student Peer Advisory Network
-      year: 2023-2025
-      description:
-        - Mentored incoming students in the transition to their undergraduate degrees, serving as a volunteer for school admissions, recruitment, and student life.
+      - label: Pi Tau Sigma
+        details: "President (GWU, 2024–25) and Member (2023–Present) — International honor society recognizing academic excellence in mechanical engineering."
 
-    - title: Member
-      institution: GWU University Honors Program
-      year: 2021
-      description:
-        - Fosters interdisciplinary scholarship, leadership, and academic excellence at GWU.
-    
+      - label: Tau Beta Pi
+        details: "Member (2024–Present) — Oldest engineering honor society recognizing exceptional academic achievement and integrity."
 
-      
+      - label: GWU SEAS Student Peer Advisory Network
+        details: "First-Year Mentor (2023–2025) — Mentored incoming students in the transition to their undergraduate degrees."
+
+      - label: GWU University Honors Program
+        details: "Member (2021) — Fosters interdisciplinary scholarship, leadership, and academic excellence at GWU."
