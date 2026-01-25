@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: **M.S. Mechanical Engineering Candidate at George Washington University**
+subtitle: M.S. Mechanical Engineering Candidate at George Washington University
 
 profile:
   align: right
