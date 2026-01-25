@@ -162,12 +162,7 @@ ninja.data = [{
             window.location.href = "/blog/2023/aerostructures/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-started-my-bachelor-s-degree-at-the-george-washington-university-in-washington-dc-sparkles-smile",
+      },{id: "news-started-my-bachelor-s-degree-at-the-george-washington-university-in-washington-dc-sparkles-smile",
           title: 'Started my bachelor’s degree at The George Washington University in Washington, DC! :sparkles:...',
           description: "",
           section: "News",},{id: "news-first-day-at-pennsylvania-department-of-transportation-as-a-summer-intern",
