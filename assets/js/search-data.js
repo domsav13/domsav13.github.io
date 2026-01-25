@@ -122,7 +122,7 @@ ninja.data = [{
         
           title: "Object Tracking and Identification",
         
-        description: "Pocket-sized computer vision (OpenCV)",
+        description: "Pocket-sized computer vision (Raspberry Pi/OpenCV)",
         section: "Posts",
         handler: () => {
           
