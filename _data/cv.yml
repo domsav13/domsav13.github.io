@@ -31,6 +31,14 @@
       institution: The University of New South Wales, Sydney, New South Wales, Australia
       year: 2023
 
+    Skills and Interests:
+      - name: Programming
+        keywords: "Python (PyTorch, TensorFlow, OpenCV), MATLAB/Simulink, C/C++, ROS/ROS2 (ongoing), Raspberry Pi, Arduino"
+      - name: CAD/Analysis
+        keywords: "SolidWorks (CSWA level), Onshape, Ansys Fluent, AutoCAD"
+      - name: Coursework
+        keywords: "Electromechanical Controls, Mechatronics, Robotics Vision and Perception, Robotic Systems"
+
 - title: Experience
   type: time_table
   contents:
@@ -102,5 +110,6 @@
       year: 2021
       description:
         - Fosters interdisciplinary scholarship, leadership, and academic excellence at GWU.
+    
 
       
