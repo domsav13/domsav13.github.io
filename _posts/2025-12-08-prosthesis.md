@@ -32,7 +32,7 @@ The overarching objectives were discretized into traceable requirements supporte
 | 2.1 | The maximum thickness of the foot / blade shall be 2 inches | This value corresponds to the thickness of an average shoe | 
 | 2.2 | The length of the lower leg shall be 26 inches | This value corresponds to the length of an average human lower leg (ankle to knee) | 
 | 2.3 | The length of the upper leg shall be 8 inches | This value is chosen to accommodate the length from the missing knee joint to the residual limb in the quadricep area | 
-| 3 | The length of the foot / blade shall be 12 inchse | This value corresponds to the length of an average human foot | 
+| 3 | The length of the foot / blade shall be 12 inches | This value corresponds to the length of an average human foot | 
 | 4 | The knee joint shall move with one degree of freedom like a typical hinge | This simplifies the degrees of freedom that an actual human knee has while providing enough functionality | 
 | 4.1 | The range of motion of the knee joint shall be 0 to 125 degrees | This allows enough bending for simple motions like walking and sitting | 
 | 5 | The ankle joint shall move with one degree of freedom | This simplifies the degrees of freedom that an actual human ankle has while providing functionality for walking and other motions | 
