@@ -41,6 +41,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/mnist/";
           
         },
+      },{id: "post-iot-christmas-tree",
+        
+          title: "IoT Christmas Tree",
+        
+        description: "Coordinate- and sensor-based Christmas tree lighting",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/xmas-tree/";
+          
+        },
       },{id: "post-controls-for-a-2d-rocket",
         
           title: "Controls for a 2D Rocket",
@@ -94,17 +105,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/sys-id/";
-          
-        },
-      },{id: "post-iot-christmas-tree",
-        
-          title: "IoT Christmas Tree",
-        
-        description: "Coordinate- and sensor-based Christmas tree lighting",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/xmas-tree/";
           
         },
       },{id: "post-gwu-mae-senior-capstone",
