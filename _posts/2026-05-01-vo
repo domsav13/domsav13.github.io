@@ -1,0 +1,10 @@
+---
+layout: post
+title: Cherry Blossom Visual Odometry
+date: 2026-04-24 11:12:00-0400
+description: Localization, mapping, and extraction of cherry blossom features from a GoPro
+tags: 
+categories: 
+thumbnail: assets/img/cherry_blossom_vo.jpg
+related_posts: false
+---
