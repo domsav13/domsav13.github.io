@@ -30,18 +30,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-",
-        
-          title: "",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2026/2026-04-24-newyeller/";
-          
-        },
-      },{id: "post-cherry-blossom-visual-odometry",
+        },{id: "post-cherry-blossom-visual-odometry",
         
           title: "Cherry Blossom Visual Odometry",
         
@@ -50,6 +39,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2026/vo/";
+          
+        },
+      },{id: "post-a-robot-dog-for-rock-paper-scissors",
+        
+          title: "A Robot Dog for Rock-Paper-Scissors",
+        
+        description: "Image filtering and gesture classification for the Petoi quadruped",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/newyeller/";
           
         },
       },{id: "post-building-deep-neural-networks-from-scratch",
