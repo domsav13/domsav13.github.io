@@ -52,6 +52,17 @@ ninja.data = [{
             window.location.href = "/blog/2026/ballbalancer/";
           
         },
+      },{id: "post-cherry-blossom-visual-odometry",
+        
+          title: "Cherry Blossom Visual Odometry",
+        
+        description: "Localization, mapping, and extraction of cherry blossom features from a GoPro",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/vo/";
+          
+        },
       },{id: "post-building-deep-neural-networks-from-scratch",
         
           title: "Building Deep Neural Networks from Scratch",
