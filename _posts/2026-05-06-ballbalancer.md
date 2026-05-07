@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3RRS Ball Balancing Robot
+title: 3-RRS Ball Balancing Robot
 date: 2026-05-06 11:12:00-0400
 description: Design of a self-tilting robotic platform with a PID controller
 tags: 
