@@ -45,7 +45,7 @@ ninja.data = [{
         
           title: "A Robot Dog for Rock-Paper-Scissors",
         
-        description: "Image filtering and gesture classification for the Petoi quadruped",
+        description: "Image filtering and gesture classification for the Petoi Bittle X quadruped",
         section: "Posts",
         handler: () => {
           
