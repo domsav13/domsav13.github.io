@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-cherry-blossom-visual-odometry",
+        },{id: "post-3rrs-ball-balancing-robot",
+        
+          title: "3RRS Ball Balancing Robot",
+        
+        description: "Design of a self-tilting robotic platform with a PID controller",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/ballbalancer/";
+          
+        },
+      },{id: "post-cherry-blossom-visual-odometry",
         
           title: "Cherry Blossom Visual Odometry",
         
