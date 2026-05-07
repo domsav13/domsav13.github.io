@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-building-deep-neural-networks-from-scratch",
+        },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/2026-04-24-newyeller/";
+          
+        },
+      },{id: "post-building-deep-neural-networks-from-scratch",
         
           title: "Building Deep Neural Networks from Scratch",
         
