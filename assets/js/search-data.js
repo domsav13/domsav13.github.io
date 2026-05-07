@@ -41,17 +41,6 @@ ninja.data = [{
             window.location.href = "/blog/2026/2026-04-24-newyeller/";
           
         },
-      },{id: "post-3rrs-ball-balancing-robotic-system",
-        
-          title: "3RRS Ball Balancing Robotic System",
-        
-        description: "Design and assembly of a self-tilting robotic platform with a PID controller",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2026/ballbalancer/";
-          
-        },
       },{id: "post-cherry-blossom-visual-odometry",
         
           title: "Cherry Blossom Visual Odometry",
