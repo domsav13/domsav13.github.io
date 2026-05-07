@@ -30,9 +30,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-3rrs-ball-balancing-robot",
+        },{id: "post-3-rrs-ball-balancing-robot",
         
-          title: "3RRS Ball Balancing Robot",
+          title: "3-RRS Ball Balancing Robot",
         
         description: "Design of a self-tilting robotic platform with a PID controller",
         section: "Posts",
