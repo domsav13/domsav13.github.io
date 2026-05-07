@@ -2,7 +2,7 @@
 layout: post
 title: New Yeller: A Robot Dog for Rock-Paper-Scissors
 date: 2026-04-24 11:12:00-0400
-description: Image filtering and gesture classification on a quadruped
+description: Image filtering and gesture classification for a quadruped
 tags: 
 categories: 
 thumbnail: assets/img/newyeller.jpg
