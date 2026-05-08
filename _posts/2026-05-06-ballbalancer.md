@@ -226,7 +226,7 @@ The controller in the code is a discrete PID applied independently on the two ax
 
 $$
 \begin{aligned}
-I_j[k] &= \sum_{m=1}^k \frac{1}{2}(e_j[m]+e_j[m-1])\cdot0.5 = \sum_{m=1}^k 0.25 \cdot (e_j[m]+e_j[m-1])
+I_j[k] &= \sum_{m=1}^k \frac{1}{2}(e_j[m]+e_j[m-1])\cdot0.5 = \sum_{m=1}^k 0.25 \cdot (e_j[m]+e_j[m-1])\\
 D_j[k] &= 2 \cdot (e_j[k]-e_j[k-1])
 \end{aligned}
 $$
