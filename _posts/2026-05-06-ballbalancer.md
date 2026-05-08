@@ -50,7 +50,7 @@ fig
 Let $$ a_f $$, $$ b_f $$, and $$ c_f $$ be the position vectors pointing from the base origin to the 3 moving platform corner points after tilting. These 3 vectors form an equilateral triangle centered at $$ h $$. $$ a_f $$ lies on the symmetry plane whereas $$ b_f $$ and $$ c_f $$ are mirrored. The components of these vectors are initialized as
 
 $$
-a_f = \begin{bmatrix}0\\a_{fy}\\a_{fz}\end{bmatrix} \quad\quad\quad \b_f = \begin{bmatrix}\sqrt{3}b_{fy}\\b_{fy}\\b_{fz}\end{bmatrix} \quad\quad\quad c_f = \begin{bmatrix}-\sqrt{3}c_{fy}\\c_{fy}\\c_{fz}\end{bmatrix}
+a_f = \begin{bmatrix}0\\a_{fy}\\a_{fz}\end{bmatrix} \quad\quad\quad b_f = \begin{bmatrix}\sqrt{3}b_{fy}\\b_{fy}\\b_{fz}\end{bmatrix} \quad\quad\quad c_f = \begin{bmatrix}-\sqrt{3}c_{fy}\\c_{fy}\\c_{fz}\end{bmatrix}
 $$
 
 These components are a function of the vectors pointing from the platform center to each platform corner. Thus, a rotation matrix is needed such that
@@ -95,7 +95,7 @@ $$
 r_c = R\begin{bmatrix}\frac{-\sqrt{3}e}{2}\\\frac{e}{2}\\0\end{bmatrix} = \begin{bmatrix}e\left(\frac{-\sqrt{3}(1+n_z-n_x^2)+n_xn_y}{2(1+n_z)}\right)\\e\left(\frac{1+n_z-n_y^2+\sqrt{3}n_xn_y}{2(1+n_z)}\right)\\\frac{e}{2}(\sqrt{3}n_x-n_y)\end{bmatrix}
 $$
 
-These vectors are related to $$ a_f $$, $$ b_f $$, and $$ c_f $$ by $$ a_f = h + r_a $$, $$ b_f = h + r_b $$, and $$ c_f = h + r_c $$. $$ h = \begin{bmatrix}h_x&h_y&h_z\end{bmatrix}^T represents some offset from the normal vector and the base plane origin. The components of each vector are required to find the rotation of each joint, since they contribute to the $$ \bar{a} $$, $$ \bar{b} $$, and $$ \bar{c} $$ vectors pointing from each base leg to each rotated platform leg shown in Fig. 3. To find these components, the origin is chosen as $$ a_{fx} = 0 $$ since the mechanism contains symmetry:
+These vectors are related to $$ a_f $$, $$ b_f $$, and $$ c_f $$ by $$ a_f = h + r_a $$, $$ b_f = h + r_b $$, and $$ c_f = h + r_c $$. $$ h = \begin{bmatrix}h_x&h_y&h_z\end{bmatrix}^T $$ represents some offset from the normal vector and the base plane origin. The components of each vector are required to find the rotation of each joint, since they contribute to the $$ \bar{a} $$, $$ \bar{b} $$, and $$ \bar{c} $$ vectors pointing from each base leg to each rotated platform leg shown in Fig. 3. To find these components, the origin is chosen as $$ a_{fx} = 0 $$ since the mechanism contains symmetry:
 
 $$
 \begin{aligned}
@@ -123,7 +123,7 @@ $$
 For the vector pointing from the base origin to the moving platform leg B:
 
 $$
-b_f = \begin{bmatrix}b_{fx}\\b_{fy}\\b_{fz}\end{bmatrix} = \begin{bmatrix}\frac{\sqrt{3}e}{2}\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)\\\frac{e}{2}\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)\\h_z-\frac{e}{2}(\sqrt{3}n_x+n_y)}\end{bmatrix}
+b_f = \begin{bmatrix}b_{fx}\\b_{fy}\\b_{fz}\end{bmatrix} = \begin{bmatrix}\frac{\sqrt{3}e}{2}\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)\\\frac{e}{2}\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)\\h_z-\frac{e}{2}(\sqrt{3}n_x+n_y)\end{bmatrix}
 $$
 
 For the vector pointing from the base origin to the moving platform leg C:
@@ -136,8 +136,8 @@ Finally, the vectors pointing from the base legs to the moving platform legs can
 
 $$
 \begin{aligned}
-\bar{a} &= a_f - a_0 = \begin{bmatrix}0\\d+\frac{e}{2(1+n_z)}(1-4n_x^2-3n_z^2-2n_z)\\h_z+en_y\end{bmatrix}
-\bar{b} &= b_f - b_0 = \begin{bmatrix}\frac{\sqrt{3}}{2}\left(e\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\\frac{1}{2}\left(e\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\h_z-\frac{e}{2}(\sqrt{3}n_x+n_y)\end{bmatrix}
+\bar{a} &= a_f - a_0 = \begin{bmatrix}0\\d+\frac{e}{2(1+n_z)}(1-4n_x^2-3n_z^2-2n_z)\\h_z+en_y\end{bmatrix}\\
+\bar{b} &= b_f - b_0 = \begin{bmatrix}\frac{\sqrt{3}}{2}\left(e\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\\frac{1}{2}\left(e\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\h_z-\frac{e}{2}(\sqrt{3}n_x+n_y)\end{bmatrix}\\
 \bar{c} &= c_f - c_0 = \begin{bmatrix}\frac{\sqrt{3}{2}\left(d-e\left(1-\frac{n_x^2-\sqrt{3}n_xn_y}{1+n_z}\right)\right)\\\frac{1}{2}\left(e\left(1-\frac{n_x^2-\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\h_z+\frac{e}{2}(\sqrt{3}n_x-n_y)\end{bmatrix}
 \end{aligned}
 $$
@@ -184,6 +184,6 @@ $$
 \theta_c = \cos^{-1}\left(\frac{\sqrt{3}c_x-c_y}{2c_m}\right) + \cos^{-1}\left(\frac{c_m^2+f^2-g^2}{2c_mf}\right)
 $$
 
-These derivations and angles are needed because the controller does not command platform tilt directly to the motors. The balancer's high-level goal is to tilt the platform by a certain amount in $$ x $$ and $$ y $$ so the ball rolls toward a target, and the inverse kinematics is the map that turns a desired platform pose $$ (h_z, n_x, n_y, n_z) $$ into the three motor angles $$ (\theta_a, \theta_b, theta_c) $$. In control terms, the workflow is taking a desired ball motion, converting it to a desired platform orientation, using the inverse kinematic equations to translate into motor angles, and then executing step commands.
+These derivations and angles are needed because the controller does not command platform tilt directly to the motors. The balancer's high-level goal is to tilt the platform by a certain amount in $$ x $$ and $$ y $$ so the ball rolls toward a target, and the inverse kinematics is the map that turns a desired platform pose $$ (h_z, n_x, n_y, n_z) $$ into the three motor angles $$ (\theta_a, \theta_b, \theta_c) $$. In control terms, the workflow is taking a desired ball motion, converting it to a desired platform orientation, using the inverse kinematic equations to translate into motor angles, and then executing step commands.
 
 ### Assembly and Circuit Design
