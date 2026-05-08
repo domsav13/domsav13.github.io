@@ -31,9 +31,9 @@ fig
 
 The camera code that was developed uses this data to filter measurements and to then play the winning gestures, which are shown in Fig. 3. The camera tasks polls for two conditions:
 
-1. **__Uncentered, low confidence__**: if the gesture is uncentered in the image and contains a low detection score, the robot repositions itself to align the detection.
+1. **_Uncentered, low confidence_**: if the gesture is uncentered in the image and contains a low detection score, the robot repositions itself to align the detection.
 
-2. **__Centered, high confidence__**: if the gesture is within the center of the image with a high detection score (>70), the robot executes the winning move.
+2. **_Centered, high confidence_**: if the gesture is within the center of the image with a high detection score (>70), the robot executes the winning move.
 
 A low-pass filter is also applied to the bounding box detection and confidence scores to reduce false positive detection cases. 
 
