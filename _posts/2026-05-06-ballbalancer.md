@@ -138,7 +138,11 @@ $$
 \begin{aligned}
 \bar{a} &= a_f - a_0 = \begin{bmatrix}0\\d+\frac{e}{2(1+n_z)}(1-4n_x^2-3n_z^2-2n_z)\\h_z+en_y\end{bmatrix}\\
 \bar{b} &= b_f - b_0 = \begin{bmatrix}\frac{\sqrt{3}}{2}\left(e\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\\frac{1}{2}\left(e\left(1-\frac{n_x^2+\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\h_z-\frac{e}{2}(\sqrt{3}n_x+n_y)\end{bmatrix}\\
-\bar{c} &= c_f - c_0 = \begin{bmatrix}\frac{\sqrt{3}{2}\left(d-e\left(1-\frac{n_x^2-\sqrt{3}n_xn_y}{1+n_z}\right)\right)\\\frac{1}{2}\left(e\left(1-\frac{n_x^2-\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\h_z+\frac{e}{2}(\sqrt{3}n_x-n_y)\end{bmatrix}
+\bar{c} &= c_f - c_0 = \begin{bmatrix}
+\frac{\sqrt{3}}{2}\left(d-e\left(1-\frac{n_x^2-\sqrt{3}n_xn_y}{1+n_z}\right)\right)\\
+\frac{1}{2}\left(e\left(1-\frac{n_x^2-\sqrt{3}n_xn_y}{1+n_z}\right)-d\right)\\
+h_z+\frac{e}{2}(\sqrt{3}n_x-n_y)
+\end{bmatrix}
 \end{aligned}
 $$
 
