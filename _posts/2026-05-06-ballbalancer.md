@@ -244,7 +244,7 @@ Fig. 4 shows the main components described here, as well as a few of the essenti
 Fig. 5 shows the circuit for the electromechanical system. The main interfaces regard each TMC2209 motor driver and the touch panel sensor.
 
 <div class="row mt-3">
-    <div class="col-12 col-md-6 mx-auto mt-3 mt-md-0">
+    <div class="col-12 col-md-8 mx-auto mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/balancer_circuit.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -302,22 +302,22 @@ The missing piece regards the position responses to the PID output, which rely o
 Althogh the tuning may be improved for other desired qualities, the controller successfully finds a near-equilibrium point in the center of the platform when the ball is placed in each corner. The gains that satisfied this requirement were found as $$ K_p = 175 \times 10^{-6} $$, $$ K_i = 25 \times 10^{-7} $$, and $$ K_d = 1000 \times 10^{-6} $$. A small $$ K_i $$ was ultimately introduced as a correction factor, although a PD controller by itself may also work in this scenario. The position responses after placing the ball in each corner of the platform are given in Fig. 6.
 
 <div class="row mt-3 g-3 justify-content-center">
-  <div class="col-12 col-md-5">
+  <div class="col-12 col-md-6">
     {% include figure.liquid path="assets/img/corner_topleft.jpg"
       class="img-fluid rounded z-depth-1 w-100" %}
   </div>
 
-  <div class="col-12 col-md-5">
+  <div class="col-12 col-md-6">
     {% include figure.liquid path="assets/img/corner_topright.jpg"
       class="img-fluid rounded z-depth-1 w-100" %}
   </div>
 
-  <div class="col-12 col-md-5">
+  <div class="col-12 col-md-6">
     {% include figure.liquid path="assets/img/corner_bottomleft.jpg"
       class="img-fluid rounded z-depth-1 w-100" %}
   </div>
 
-  <div class="col-12 col-md-5">
+  <div class="col-12 col-md-6">
     {% include figure.liquid path="assets/img/corner_bottomright.jpg"
       class="img-fluid rounded z-depth-1 w-100" %}
   </div>
@@ -447,7 +447,46 @@ Despite this small bias, the controller still proves to successfully navigate th
 
 Along with repeatability, certain time-domain statistics can be measured in the position responses. A Python script was developed to read the Arduino and compute steady-state error (in touch panel counts), settling time, and percent overshoot for each position on a given trajectory. The trajectories were gathered for the four starting positions and results were averaged over ten trials. Table 2 shows these results for starting positions on the left side of the platform. The settling band was chosen as $$ \pm 75 $$ counts in alignment with the controller's somewhat oscillatory performance.
 
-table 2
+<table style="margin:auto; border-collapse:collapse; text-align:center;">
+  <thead>
+    <tr style="border-top:1px solid #555; border-bottom:1px solid #555;">
+      <th style="padding:4px 14px;">Ball Placement</th>
+      <th style="padding:4px 14px;">Trials</th>
+      <th style="padding:4px 14px;">\(e_{x,ss}\) (counts)</th>
+      <th style="padding:4px 14px;">\(e_{y,ss}\) (counts)</th>
+      <th style="padding:4px 14px;">\(t_{s,x}\) (s)</th>
+      <th style="padding:4px 14px;">\(t_{s,y}\) (s)</th>
+      <th style="padding:4px 14px;">X Overshoot (%)</th>
+      <th style="padding:4px 14px;">Y Overshoot (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:2px 14px;">Top Left</td>
+      <td>10</td>
+      <td>11.95</td>
+      <td>73.36</td>
+      <td>1.43</td>
+      <td>2.89</td>
+      <td>40.24</td>
+      <td>1.08</td>
+    </tr>
+    <tr style="border-bottom:1px solid #555;">
+      <td style="padding:2px 14px;">Bottom Left</td>
+      <td>10</td>
+      <td>21.99</td>
+      <td>79.47</td>
+      <td>1.83</td>
+      <td>4.94</td>
+      <td>36.09</td>
+      <td>0.553</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="caption" style="text-align:center; margin-top:8px;">
+  Table 2: Position response statistics for starting positions on the left side of the platform
+</div>
 
 When the ball is placed on the left side, the balancer is able to recover and bring the ball near the center, but the response is not equally strong in both axes. The x-direction response is much faster, however this comes with relatively large overshoot, showing that the x-axis response is underdamped and somewhat aggressive. The controller reacts quickly to the initial position error, but it drives the ball past the target before damping out the motion. The y-direction behaves differently, but it is biased away from teh desired position and does not correct the final error as effectively. Fig. 8 provides sample trajectories for either starting position, and it is evident that although the y position plateaus, it does not reach its desired state. This may be due to the dominance of the control law in the x direction, or simply because there is mechanical asymmetry, inverse kinematic nonlinearities, or unveen control authority from the three motors.
 
@@ -469,7 +508,46 @@ Overall, these results show that the controller is stable and capable of saving 
 
 Table 3 and Fig. 9 present the same response statistics for starting positions on the right side of the platform. When the ball is placed on the right side, the system again succeeds in recovering and stabilizing the ball near the desired position, but the response characteristics are noticeably more extreme.
 
-table 3
+<table style="margin:auto; border-collapse:collapse; text-align:center;">
+  <thead>
+    <tr style="border-top:1px solid #555; border-bottom:1px solid #555;">
+      <th style="padding:4px 14px;">Ball Placement</th>
+      <th style="padding:4px 14px;">Trials</th>
+      <th style="padding:4px 14px;">\(e_{x,ss}\) (counts)</th>
+      <th style="padding:4px 14px;">\(e_{y,ss}\) (counts)</th>
+      <th style="padding:4px 14px;">\(t_{s,x}\) (s)</th>
+      <th style="padding:4px 14px;">\(t_{s,y}\) (s)</th>
+      <th style="padding:4px 14px;">X Overshoot (%)</th>
+      <th style="padding:4px 14px;">Y Overshoot (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:2px 14px;">Top Right</td>
+      <td>10</td>
+      <td>27.06</td>
+      <td>87.24</td>
+      <td>0.87</td>
+      <td>4.44</td>
+      <td>54.61</td>
+      <td>108.39</td>
+    </tr>
+    <tr style="border-bottom:1px solid #555;">
+      <td style="padding:2px 14px;">Bottom Right</td>
+      <td>10</td>
+      <td><strong>37.92</strong></td>
+      <td><strong>79.19</strong></td>
+      <td>1.17</td>
+      <td>4.34</td>
+      <td><strong>66.68</strong></td>
+      <td><strong>93.51</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="caption" style="text-align:center; margin-top:8px;">
+  Table 3: Position response statistics for starting positions on the right side of the platform
+</div>
 
 <div class="row mt-3 justify-content-center">
   <div class="col-12 col-md-6">
