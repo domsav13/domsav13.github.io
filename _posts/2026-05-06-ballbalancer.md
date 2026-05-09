@@ -19,6 +19,8 @@ The two revolute joints occur at the motor shaft and between the links, whereas 
 
 The work included in this project spans several domains. First, a mathematical model is derived using inverse kinematics to provide a relationship between the platform control objects and motor commands, making coordinated balancing possible. Then, hardware choices are detailed for both the mechanical and electrical components. Lastly, a PID controller is tuned to determine how much the platform should tilt based on where the ball is and how it is moving.
 
+---
+
 ### Inverse Kinematics
 
 The robot is able to angle itself through the use of inverse kinematics equations, which calculate the position to move each stepper motor in order to achieve a desired platform orientation. To obtain these desired orientatinos, the system must be modeled using a combination of geometry, vector algebra, and rotation kinematics. First, the base and platform are modeled as equilateral triangles in the XY-plane, as shown in Fig. 2. For the base and platform, each leg is an equal distance $$ d $$ or $$ e $$ from the corresponding triangle center.
@@ -190,6 +192,8 @@ $$
 
 These derivations and angles are needed because the controller does not command platform tilt directly to the motors. The balancer's high-level goal is to tilt the platform by a certain amount in $$ x $$ and $$ y $$ so the ball rolls toward a target, and the inverse kinematics is the map that turns a desired platform pose $$ (h_z, n_x, n_y, n_z) $$ into the three motor angles $$ (\theta_a, \theta_b, \theta_c) $$. In control terms, the workflow is taking a desired ball motion, converting it to a desired platform orientation, using the inverse kinematic equations to translate into motor angles, and then executing step commands.
 
+---
+
 ### Assembly and Circuit Design
 
 The main design choices are split up into mechanical and electrical components. The mechanical concept was first designed and assembled in SolidWorks. Then, the motor and sensors were chosen in accordance with the mechanism
@@ -211,6 +215,8 @@ fig
 The motors require a power source of 24 V, sharing ground with the microcontroller. A $$ 100\mu $$F capacitor is placed in parallel with the $$ V_m $$ and motor GND pins of the motor drivers to stabilize the power supply. Only one Arduino digital output is provided to the enable pin of the driver to act as a control switch for the drivers' internal output stages. Similarly, a constant logic voltage supply (Arduino 5 V) is provided to the three VIO pins, which define the voltage levels for other pins on the drivers. The microstepping pins MS1 and MS2 are both tied to the VIO supply, which selects 16 microsteps; thus, the driver is in 1/16 microstepping mode which provides a finer resolution for the position range of motion. As shown in Fig. 5, motor A corresponds to digital pins 25 and 26 for step and direction, motor B corresponds to digital pins 23 and 24, and motor C corresponds to digital pins 27 and 28. These naming conventions follow from the inverse kinematics for each leg.
 
 The final component consists of the touch panel, which is connected to analog pins on the microcontroller. The touch panel is a 4-wire resistive sensor. Two wires are used to create a voltage gradient across one axis and one of the other wires is read by the Arduino ADC to see where the touch point sits along that gradient. Then the roles are swapped to read the other axis. The panel is wired this way because each of the four wires must sometimes be driven high, sometimes low, sometimes high-impedance, and sometimes read as an analog voltage. The A0-A3 pins give the Arduino the flexibility to excite one axis, measure the other, then switch modes and repeat for the second coordinate.
+
+--- 
 
 ### Position Control
 
@@ -257,6 +263,8 @@ Althogh the tuning may be improved for other desired qualities, the controller s
 
 4 figs
 
+---
+
 ### Arduino
 
 The code is written and compiled at the register level using ATmega2560 hardware. First, the design parameters and the mathematical and timing tools are established. A structure is defined to store the measured ball position and pressure from the touch panel, constants are declared for the platform geometry, control gains, touch panel, and motor behavior, and utility functions are built to assist with math operations and microsecond/millisecond delays.
@@ -270,6 +278,8 @@ As discussed before, the inverse kinematics pipeline converts a desired platform
 At startup, the sketch performs a simple homing routine to command all three motors to move upward by a fixed number of steps at a fixed speed. The purpose is to establish the controller's internal reference frame; all later balancing motions are computed and expressed relative to this starting configuration. A separate function is needed to bridge the gap between desired platform pose and actual motor commands. The desired step offsets are computed from inverse kinematics, added to the startup home position, and then target positions and step rates are set. When the ball is detected, the commanded step rate is made proportional to the position error magnitude and then limited by both a maximum speed and a slew rate constraint so the motors do not change speed too abruptly. When no ball is detected, the platform simply returns toward its neutral pose at a defined home rate. This module is important because it shapes the physical response of the machine, ensuring that the platform moves smoothly and within appropriate speed limits instead of instantly jumping to new commands.
 
 Lastly, the main loop implements the balancing controller. Every cycle, it reads the current ball position, computes the x and y error relative to the desired center point, and then forms proportional, integral, and derivative terms to create two control outputs for each axis. These outputs are interpreted as desired platform tilt commands, which are passed into the inverse kinematics and target generation modules. If the ball is not detected, all controller states are reset and the platform is driven back to level. Although the sketch defines the control period as $$ T_s=5 $$ ms, the control loop is not exactly locked to this interval because it uses a software delay plus blocks ADC and UART operations. Therefore it is best described as a 200 Hz control loop rather than a hard-fixed 200 Hz interrupt-driven controller. In contrast, the step generation is much more deterministic because it is handled by Timer1 at 20 kHz.
+
+---
 
 ### Results
 
@@ -308,6 +318,8 @@ table 3
 2 figs
 
 In the x direction, the system responds very quickly however this response is accompanied by very large overshoot, indicating an even more strongly underdamped response than was observed on the left side. The main difference is in the y direction responses, which exhibit extremely large overshoot values. This means the ball not only crosses the desired position but does so with a very large excursion in the opposite  direction before recovering. Despite this, the system still dissipates these large oscillations at the expense of slower settling times. Compared to the left side results, the right side responses are significantly more oscillatory and less well-controlled. Along with the discovery that the platform is not fully level (Fig. 7), there may also be minor nonlinearities in the assembly or certain assumptions of the inverse kinematics are less trustworthy. The right side responses reveal a tendency toward excessive gain or insufficient damping, highlighting the need for improved balance between responsiveness and stability as well as better handling of the axis coupling and steady-state error.
+
+---
 
 ### Conclusions and Further Work
 
