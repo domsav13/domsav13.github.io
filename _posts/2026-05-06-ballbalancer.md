@@ -41,7 +41,7 @@ The robot is able to angle itself through the use of inverse kinematics equation
     Fig. 2: Convention for the modeling of the base and platform frames (XY-plane)
 </div>
 
-Leg A is taken as the vertical corner with respect to the origin, and legs B and C correspond to teh remaining triangle vertices, with symmetry about the y-axis. Using the equilateral triangle, the x-coordinate for each of these points is $$ x = \pm \frac{\sqrt{3}}{2}d $$ and the y-coordinate is $$ y = \frac{d}{2} $$. Thus, the vertices of the base are
+Leg A is taken as the vertical corner with respect to the origin, and legs B and C correspond to the remaining triangle vertices, with symmetry about the y-axis. Using the equilateral triangle, the x-coordinate for each of these points is $$ x = \pm \frac{\sqrt{3}}{2}d $$ and the y-coordinate is $$ y = \frac{d}{2} $$. Thus, the vertices of the base are
 
 $$
 a_0 = \begin{bmatrix}0\\-d\\0\end{bmatrix} \quad\quad\quad b_0 = \begin{bmatrix}\frac{\sqrt{3}d}{2}\\\frac{d}{2}\\0\end{bmatrix} \quad\quad\quad c_0 = \begin{bmatrix}\frac{-\sqrt{3}d}{2}\\\frac{d}{2}\\0\end{bmatrix}
