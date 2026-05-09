@@ -44,7 +44,7 @@ First, an orthogonal calibration routine was used to establish the servo-motor r
 The robot comes with several built-in functions, including a microphone for voice commands and a Bluetooth-based joystick. Using the [OpenCatESP32 framework](https://github.com/PetoiCamp/OpenCatEsp32-Quadruped-Robot), an object detection system was developed on the microcontroller. First, a gesture model was uploaded onto the AI vision camera module to detect "rock", "paper", and "scissors." The data that was returned and later used include bounding box coordinates, classifier ID, and confidence scores for each measurement. 
 
 <div class="row mt-3">
-    <div class="col-12 col-md-7 mx-auto mt-3 mt-md-0">
+    <div class="col-12 col-md-8 mx-auto mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/dog_detection_model.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
