@@ -13,7 +13,14 @@ related_posts: false
 
 In many applications, equilibrium is not naturally stable and must be actively controlled. In this application, the task is inherently challenging: a ball is unstable on a platform, so a mechatronic system must detect its position and quickly adjust the platform orientation to keep the ball near a desired location. Because of this, balancing mechanisms demand a significant amount of closed-loop control, mathematical modeling, sensor integration, and multi-actuator coordination. Fig. 1 shows the mechanical concept for the balancer which consists of a three revolute-revolute-spherical (3-RRS) parallel manipulator.
 
-fig
+<div class="row mt-3">
+    <div class="col-12 col-md-8 mx-auto mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ball-balancer-assembly.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Fig. 1: CAD assembly of the balancing mechanism (not shown: circuitry and resistive touch sensor)
+</div>
 
 The two revolute joints occur at the motor shaft and between the links, whereas the spherical joint interfaces with the platform. By clamping a resistive touch panel to the platform, the microcontroller will be able to detect the position of a sufficiently heavy ball.
 
@@ -25,7 +32,14 @@ The work included in this project spans several domains. First, a mathematical m
 
 The robot is able to angle itself through the use of inverse kinematics equations, which calculate the position to move each stepper motor in order to achieve a desired platform orientation. To obtain these desired orientatinos, the system must be modeled using a combination of geometry, vector algebra, and rotation kinematics. First, the base and platform are modeled as equilateral triangles in the XY-plane, as shown in Fig. 2. For the base and platform, each leg is an equal distance $$ d $$ or $$ e $$ from the corresponding triangle center.
 
-fig
+<div class="row mt-3">
+    <div class="col-12 col-md-6 mx-auto mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/base_platform_figure.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Fig. 2: Convention for the modeling of the base and platform frames (XY-plane)
+</div>
 
 Leg A is taken as the vertical corner with respect to the origin, and legs B and C correspond to teh remaining triangle vertices, with symmetry about the y-axis. Using the equilateral triangle, the x-coordinate for each of these points is $$ x = \pm \frac{\sqrt{3}}{2}d $$ and the y-coordinate is $$ y = \frac{d}{2} $$. Thus, the vertices of the base are
 
@@ -47,7 +61,14 @@ $$
 
 Next, the system must be examined in three dimensions using vectors and rotations. Fig. 3 shows the model and relations between the base, platform, links, and relevants rotations and vectors.
 
-fig
+<div class="row mt-3">
+    <div class="col-12 col-md-6 mx-auto mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3d_base_platform.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Fig. 3: Vector and rotation analysis of the links between the base and platform frames
+</div>
 
 Let $$ a_f $$, $$ b_f $$, and $$ c_f $$ be the position vectors pointing from the base origin to the 3 moving platform corner points after tilting. These 3 vectors form an equilateral triangle centered at $$ h $$. $$ a_f $$ lies on the symmetry plane whereas $$ b_f $$ and $$ c_f $$ are mirrored. The components of these vectors are initialized as
 
@@ -204,13 +225,32 @@ Most of the physical components were 3D printed. These parts include the base, t
 
 Fig. 4 shows the main components described here, as well as a few of the essential electrical components which are discussed next.
 
-2 figs
+<div class="row mt-3 justify-content-center">
+  <div class="col-12 col-md-6">
+    {% include figure.liquid path="assets/img/assembly_mechanism.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+  <div class="col-12 col-md-6">
+    {% include figure.liquid path="assets/img/assembly_full.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+</div>
+<div class="caption">
+    Fig. 4: The main assembly components for the ball balancing mechanism
+</div>
 
 #### Electrical Design
 
 Fig. 5 shows the circuit for the electromechanical system. The main interfaces regard each TMC2209 motor driver and the touch panel sensor.
 
-fig
+<div class="row mt-3">
+    <div class="col-12 col-md-6 mx-auto mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/balancer_circuit.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Fig. 5: Drawn electrical schematic for the main power source, motors, touch panel, and Arduino I/O
+</div>
 
 The motors require a power source of 24 V, sharing ground with the microcontroller. A $$ 100\mu $$F capacitor is placed in parallel with the $$ V_m $$ and motor GND pins of the motor drivers to stabilize the power supply. Only one Arduino digital output is provided to the enable pin of the driver to act as a control switch for the drivers' internal output stages. Similarly, a constant logic voltage supply (Arduino 5 V) is provided to the three VIO pins, which define the voltage levels for other pins on the drivers. The microstepping pins MS1 and MS2 are both tied to the VIO supply, which selects 16 microsteps; thus, the driver is in 1/16 microstepping mode which provides a finer resolution for the position range of motion. As shown in Fig. 5, motor A corresponds to digital pins 25 and 26 for step and direction, motor B corresponds to digital pins 23 and 24, and motor C corresponds to digital pins 27 and 28. These naming conventions follow from the inverse kinematics for each leg.
 
@@ -261,7 +301,30 @@ The missing piece regards the position responses to the PID output, which rely o
 
 Althogh the tuning may be improved for other desired qualities, the controller successfully finds a near-equilibrium point in the center of the platform when the ball is placed in each corner. The gains that satisfied this requirement were found as $$ K_p = 175 \times 10^{-6} $$, $$ K_i = 25 \times 10^{-7} $$, and $$ K_d = 1000 \times 10^{-6} $$. A small $$ K_i $$ was ultimately introduced as a correction factor, although a PD controller by itself may also work in this scenario. The position responses after placing the ball in each corner of the platform are given in Fig. 6.
 
-4 figs
+<div class="row mt-3 g-3 justify-content-center">
+  <div class="col-12 col-md-5">
+    {% include figure.liquid path="assets/img/corner_topleft.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+
+  <div class="col-12 col-md-5">
+    {% include figure.liquid path="assets/img/corner_topright.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+
+  <div class="col-12 col-md-5">
+    {% include figure.liquid path="assets/img/corner_bottomleft.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+
+  <div class="col-12 col-md-5">
+    {% include figure.liquid path="assets/img/corner_bottomright.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+</div>
+<div class="caption">
+    Fig. 6: Position responses for ball placement on the corners (each plot represents the corresponding platform corner). Upon startup, there is a slight incline towards the left side, so the ball often shows higher settling times when placed on the right side of the platform (as shown in the top right response).
+</div>
 
 ---
 
@@ -289,15 +352,96 @@ The main results are collected as qualitative and quantiative observations measu
 
 Repeatability is tested by measuring the number of failures (when the ball falls off the platform after placement) for several trials. Table 1 shows the results and the success rate using each corner of the platform as a starting position.
 
-table 1
+<table class="table table-sm text-center">
+  <thead>
+    <tr>
+      <th>Ball Placement</th>
+      <th>Trials</th>
+      <th>Failures</th>
+      <th>Successes</th>
+      <th>Success Rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Top Left</td>
+      <td>25</td>
+      <td>1</td>
+      <td>24</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <td>Top Right</td>
+      <td>25</td>
+      <td>8</td>
+      <td>17</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Bottom Left</td>
+      <td>25</td>
+      <td>2</td>
+      <td>23</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>Bottom Right</td>
+      <td>25</td>
+      <td>9</td>
+      <td>16</td>
+      <td>64</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="caption">
+  Table 1: Balancing success rate by starting position
+</div>
 
 As shown in the results, starting positions on the right side of the platform often lead to failed responses. This is most likely due to a systematic bias that disadvantages the right side. As shown in Fig. 7, the right side of the platform is slightly inclined upon startup (most likely due to inconsistency in the motor steps), meaning there is a small gravitational component that sometimes provides the ball with too much energy for the controller to dissipate.
 
-fig
+<div class="row mt-3">
+    <div class="col-12 col-md-6 mx-auto mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/balancer_level.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Fig. 7: The startup position for the platform is slightly unlevel, leading to a systematic bias in starting positions on the right side of the platform
+</div>
 
 Despite this small bias, the controller still proves to successfully navigate the ball toward the desired point, especially for starting positions on the left side of the platform. Balance time is not presented here as a formal statistic because once the ball survives the initial displacement from the platform center, the controller is able to idle it for a prolonged duration, as shown below.
 
-video
+<div class="row mt-3 g-3 align-items-start">
+  <!-- Video 1 -->
+  <div class="col-12 col-md-6">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      class="img-fluid rounded z-depth-1 w-100">
+      <source src="{{ '/assets/img/balancing_1.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Video 2 -->
+  <div class="col-12 col-md-6">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      class="img-fluid rounded z-depth-1 w-100">
+      <source src="{{ '/assets/img/balancing_2.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<div class="caption">
+  Initial tuning (left) which was overaggressive and could not find a balancing equilibrium. Further tuning resulted in much smoother (right) position control which results in a more consistent settling time.
+</div>
 
 #### Steady-State Error, Settling Time, and Overshoot
 
@@ -307,7 +451,19 @@ table 2
 
 When the ball is placed on the left side, the balancer is able to recover and bring the ball near the center, but the response is not equally strong in both axes. The x-direction response is much faster, however this comes with relatively large overshoot, showing that the x-axis response is underdamped and somewhat aggressive. The controller reacts quickly to the initial position error, but it drives the ball past the target before damping out the motion. The y-direction behaves differently, but it is biased away from teh desired position and does not correct the final error as effectively. Fig. 8 provides sample trajectories for either starting position, and it is evident that although the y position plateaus, it does not reach its desired state. This may be due to the dominance of the control law in the x direction, or simply because there is mechanical asymmetry, inverse kinematic nonlinearities, or unveen control authority from the three motors.
 
-2 figs
+<div class="row mt-3 justify-content-center">
+  <div class="col-12 col-md-6">
+    {% include figure.liquid path="assets/img/topleftcorner_results.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+  <div class="col-12 col-md-6">
+    {% include figure.liquid path="assets/img/bottomleftcorner_results.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+</div>
+<div class="caption">
+    Fig. 8: Sample position trajectories for starting positions on the left side of the platform
+</div>
 
 Overall, these results show that the controller is stable and capable of saving the ball from left-side starting positions, although the tuning is uneven. The x-axis is fast but underdamped while the y-axis is slower and has a larger steady-state offset. This suggests that future tuning should focus on reducing X overshoot while improving y-axis steady-state accuracy and response speed.
 
@@ -315,7 +471,19 @@ Table 3 and Fig. 9 present the same response statistics for starting positions o
 
 table 3
 
-2 figs
+<div class="row mt-3 justify-content-center">
+  <div class="col-12 col-md-6">
+    {% include figure.liquid path="assets/img/toprightcorner_results.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+  <div class="col-12 col-md-6">
+    {% include figure.liquid path="assets/img/bottomrightcorner_results.jpg"
+      class="img-fluid rounded z-depth-1 w-100" %}
+  </div>
+</div>
+<div class="caption">
+    Fig. 8: Sample position trajectories for starting positions on the right side of the platform
+</div>
 
 In the x direction, the system responds very quickly however this response is accompanied by very large overshoot, indicating an even more strongly underdamped response than was observed on the left side. The main difference is in the y direction responses, which exhibit extremely large overshoot values. This means the ball not only crosses the desired position but does so with a very large excursion in the opposite  direction before recovering. Despite this, the system still dissipates these large oscillations at the expense of slower settling times. Compared to the left side results, the right side responses are significantly more oscillatory and less well-controlled. Along with the discovery that the platform is not fully level (Fig. 7), there may also be minor nonlinearities in the assembly or certain assumptions of the inverse kinematics are less trustworthy. The right side responses reveal a tendency toward excessive gain or insufficient damping, highlighting the need for improved balance between responsiveness and stability as well as better handling of the axis coupling and steady-state error.
 
